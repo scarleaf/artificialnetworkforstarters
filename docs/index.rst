@@ -15,8 +15,6 @@ Acknowledgements
 
 Authors
 -------
-
-- `Woong Jeong <https://github.com/scarleaf>`
 - `Woong Jeong <https://github.com/scarleaf>`_
 
 
