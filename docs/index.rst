@@ -27,7 +27,7 @@ Indices and tables
 
 Table of Contents
 =================
-Chapter 1  , , 
+Chapter 1 인공지능의 과거, 현재, 미래
 --------
 Chapter 2
 --------
