@@ -17,7 +17,7 @@ Authors
 -------
 
 - `Woong Jeong <https://github.com/scarleaf>`
-- ``
+- `Woong Jeong <https://github.com/scarleaf>`_
 
 
 Indices and tables
