@@ -10,6 +10,14 @@ Welcome to ArtificialNetworkForNewbie's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+Acknowledgements
+================
+
+Authors
+-------
+
+- `WoongJeong <https://github.com/scarleaf>`
+- ``
 
 
 Indices and tables
