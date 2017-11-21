@@ -8,15 +8,15 @@ Welcome to ArtificialNetworkForNewbie's documentation!
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
 
-:githum_url: https://github.com/scarleaf/artificialnetworkforstarters
+   _post/ai_beginner_chap1.rst
+
+:github_url: https://github.com/scarleaf/artificialnetworkforstarters
 
 Authors
 -------
 - `Woong Jeong <https://github.com/scarleaf>`_
 - `ByunChul Lee <https://github.com/io2oi>`_
-
 
 Indices and tables
 ==================
