@@ -9,7 +9,8 @@ Welcome to ArtificialNetworkForNewbie's documentation!
 
 :github_url: https://github.com/scarleaf/artificialnetworkforstarters
 
-Contents:
+Table of Contents
+=================
 
 .. toctree::
    :maxdepth: 2
