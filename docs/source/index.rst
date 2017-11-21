@@ -10,12 +10,12 @@ Welcome to ArtificialNetworkForNewbie's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-Acknowledgements
-================
+:githum_url: https://github.com/scarleaf/artificialnetworkforstarters
 
 Authors
 -------
 - `Woong Jeong <https://github.com/scarleaf>`_
+- ` <https://github.com/io2oi>`_
 
 
 Indices and tables
