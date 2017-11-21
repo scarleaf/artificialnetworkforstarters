@@ -5,7 +5,7 @@
 
 *처음 배우는 인공지능* 학습문서에 오신것을 환영합니다!
 ======================================================
-이 문서는 한빛미디어에서 나온 *`처음 배우는 인공지능 <https://www.google.co.kr/search?q=%EC%B2%98%EC%9D%8C%EB%B0%B0%EC%9A%B0%EB%8A%94+%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5&oq=%EC%B2%98%EC%9D%8C%EB%B0%B0%EC%9A%B0%EB%8A%94+%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5&aqs=chrome..69i57.3484j0j7&sourceid=chrome&ie=UTF-8>`_* 을 공부하면서 정리한 것이다.
+이 문서는 한빛미디어에서 나온 `*처음 배우는 인공지능* <https://www.google.co.kr/search?q=%EC%B2%98%EC%9D%8C%EB%B0%B0%EC%9A%B0%EB%8A%94+%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5&oq=%EC%B2%98%EC%9D%8C%EB%B0%B0%EC%9A%B0%EB%8A%94+%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5&aqs=chrome..69i57.3484j0j7&sourceid=chrome&ie=UTF-8>`_ 을 공부하면서 정리한 것이다.
 
 :github_url: https://github.com/scarleaf/artificialnetworkforstarters/tree/master/docs
 
