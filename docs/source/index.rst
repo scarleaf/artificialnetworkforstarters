@@ -18,7 +18,6 @@ Contents:
    _post/
 
 
-
 Authors
 -------
 - `Woong Jeong <https://github.com/scarleaf>`_
