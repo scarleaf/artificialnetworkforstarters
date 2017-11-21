@@ -3,15 +3,21 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
+
 Welcome to ArtificialNetworkForNewbie's documentation!
 ======================================================
+
+:github_url: https://github.com/scarleaf/artificialnetworkforstarters
+
+Contents:
 
 .. toctree::
    :maxdepth: 2
 
-   _post/ai_beginner_chap1.rst
+   _post/chap1_ai_beginner.rst
+   _post/
 
-:github_url: https://github.com/scarleaf/artificialnetworkforstarters
+
 
 Authors
 -------
