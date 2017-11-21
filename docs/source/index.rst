@@ -7,7 +7,7 @@
 Welcome to ArtificialNetworkForNewbie's documentation!
 ======================================================
 
-:github_url: https://github.com/scarleaf/artificialnetworkforstarters
+:github_url: https://github.com/scarleaf/artificialnetworkforstarters/tree/master/docs
 
 Table of Contents
 =================
