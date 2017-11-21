@@ -15,7 +15,7 @@ Welcome to ArtificialNetworkForNewbie's documentation!
 Authors
 -------
 - `Woong Jeong <https://github.com/scarleaf>`_
-- ` <https://github.com/io2oi>`_
+- `ByunChul Lee <https://github.com/io2oi>`_
 
 
 Indices and tables
