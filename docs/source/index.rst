@@ -32,10 +32,10 @@ Table of Contents
 
 Authors
 -------
+- `Byung-Chul Lee <https://github.com/io2oi>`_
+- `Hyeon-Joo Lee <https://github.com/hyeonlee17>`_
+- `Jong-Hyuk Kim <https://github.com/hubert93>`_
 - `Woong Jeong <https://github.com/scarleaf>`_
-- `ByunChul Lee <https://github.com/io2oi>`_
-- ` <>`_
-- ` <>`_
 
 Indices and tables
 ==================
