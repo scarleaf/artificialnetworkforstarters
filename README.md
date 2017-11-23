@@ -1,4 +1,5 @@
 # artificialnetworkforstarters
 
-ÀÌ ¹®¼­´Â ÇÑºû¹Ìµð¾î¿¡¼­ ³ª¿Â `Ã³À½ ¹è¿ì´Â ÀÎ°øÁö´É` À» °øºÎÇÏ¸ç Á¤¸®ÇÑ ¹®¼­µéÀÌ´Ù. 
-Readthedocs ¿ë ¹®¼­ ÆÄÀÏµéÀÌ´Ù.
+ì´ ë¬¸ì„œëŠ” í•œë¹›ë¯¸ë””ì–´ì—ì„œ ë‚˜ì˜¨ ``ì²˜ìŒ ë°°ìš°ëŠ” ì¸ê³µì§€ëŠ¥`` ì„ ê³µë¶€í•˜ë©° ì •ë¦¬í•œ ë¬¸ì„œë“¤ì´ë‹¤.
+
+Readthedocs ìš© ë¬¸ì„œ íŒŒì¼ë“¤ì´ë‹¤.
