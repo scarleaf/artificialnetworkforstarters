@@ -55,4 +55,4 @@ Chapter 3. 오토마톤과 인공 생명 프로그램
 
 .. rubric:: Footnotes
 .. [#] 생물과 무생물을 구별하는 가장 핵심적인 특징은 [ 자기증식능력 / 에너지변환능력 / 항상성유지능력 ]을 가지고 있어야 합니다. `위키피디아:생물 <https://ko.wikipedia.org/wiki/%EC%83%9D%EB%AC%BC>`_
-.. [#] ₩라이프 게임 <http://gmlive.narod.ru/download/live/version_0_3/gamelive.html>₩_
+.. [#] `라이프 게임 <http://gmlive.narod.ru/download/live/version_0_3/gamelive.html>`_
