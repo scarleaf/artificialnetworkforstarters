@@ -52,7 +52,7 @@ Chapter 4. 가중치와 최적해 탐색
   3. 로지스틱 회귀 : 종속 변수에 약간의 수정을 가한 선형회귀. 일반화 선형 모델의 하나로 분류함.
     1. 로지스틱 모델의 일반식
     2. 로짓(Logit) 변환 : 종속 변수 y에 로그를 적용해 y'로 변환하는 것.
-   
+    ![Logistic Model](http://www.saedsayad.com/images/ANN_Sigmoid.png)
   
 
 03 가중 회귀분석
