@@ -93,7 +93,33 @@
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="chap1.html">Chapter 1. 인공지능의 과거, 현재, 미래</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chap2.html">Chapter 2. 규칙 기반 모델의 발전</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Chapter 3. 오토마톤과 인공 생명 프로그램</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Chapter 3. 오토마톤과 인공 생명 프로그램</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">01 인공 생명 시뮬레이션</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id3">인공 생명이란?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">라이프 게임</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">감염 시뮬레이션</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id10">02 유한 오토마톤</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id12">오토마톤</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id14">오토마톤과 언어 이론</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id16">03 마르코프 모델</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id18">마르코프 모델의 주요 개념</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id19">마르코프 모델의 예</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id20">04 상태 기반 에이전트</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ai">게임 AI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id22">에이전트</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id25">보드게임</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id27">보드게임의 게임 이론</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id29">복잡하게 구성된 에이전트 사용</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="chap4.html">Chapter 4. 가중치와 최적해 탐색</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chap5.html">Chapter 5. 가중치와 최적화 프로그램</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chap6.html">Chapter 6. 통계 기반 머신러닝 1 - 확률분포와 모델링</a></li>
@@ -170,7 +196,241 @@
             
   <div class="section" id="chapter-3">
 <span id="chapter3"></span><h1>Chapter 3. 오토마톤과 인공 생명 프로그램<a class="headerlink" href="#chapter-3" title="제목 주소">¶</a></h1>
-<p>이 문서는 한빛미디어에서 나온 <code class="docutils literal"><span class="pre">처음</span> <span class="pre">배우는</span> <span class="pre">인공지능</span></code> 을 공부하면서 정리한 것이다.</p>
+<p>이 문서는 한빛미디어에서 나온 <code class="docutils literal"><span class="pre">처음</span> <span class="pre">배우는</span> <span class="pre">인공지능</span></code> 을 공부하면서 정리한 것입니다.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Authors:</th><td class="field-body"><a class="reference external" href="https://github.com/scarleaf">Woong Jeong</a></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="id1">
+<span id="id2"></span><h2>01 인공 생명 시뮬레이션<a class="headerlink" href="#id1" title="제목 주소">¶</a></h2>
+<div class="section" id="id3">
+<h3>인공 생명이란?<a class="headerlink" href="#id3" title="제목 주소">¶</a></h3>
+<div class="line-block">
+<div class="line">생명의 가장 중요한 특징 <a class="footnote-reference" href="#id30" id="id4">[1]</a> 은 <strong>자기복제</strong> 라고 할수 있습니다. 또한 자기복제 프로그램은 컴퓨터의 발달과 함께 존재해 왔습니다.</div>
+</div>
+<div class="line-block">
+<div class="line">하지만 자기복제 프로그램을 생명이라고 할 수 있을지는 많은 의문이 있습니다. '인공 생명'에 조금이나마 가깝게 행동하려면 약간의 프로그램 스스로 '의지'나 '의사'를 표현할 수 있어야 할것입니다.</div>
+</div>
+<div class="line-block">
+<div class="line">다르게 표현하자면, 기계가 '인공 생명'을 가지기 위해서는 &quot;이 기계도 혹시 생명이 있는게 아닐까?&quot;라는 의문을 갖게 해주는 무엇인가가 필요할 것입니다.</div>
+</div>
+</div>
+<div class="section" id="id5">
+<h3>라이프 게임<a class="headerlink" href="#id5" title="제목 주소">¶</a></h3>
+<div class="line-block">
+<div class="line">라이프 게임 <a class="footnote-reference" href="#id32" id="id6">[2]</a> 이란 생명체를 연상하게 하는 살아 움직이는 듯한 컴퓨터 게임을 말합니다. 바둑판에 원하는 돌을 놓고 미리 정해둔 법칙에 따라 전체 상태를 변화시켜가는 프로그램입니다.</div>
+</div>
+<div class="line-block">
+<div class="line">라이프 게임은 시간이 지나며서 채워지는 부분이 매번 다르기 때문에 같은 패턴이 등장하는 일은 거의 없으며 특정 규칙을 따라 변화하게 됩니다.</div>
+</div>
+<div class="line-block">
+<div class="line">라이프 게임은 실행할 수 있는 모든 계산을 칸을 채우거나 비우는 패턴으로 나타낼 수 있으므로 <strong>만능 튜링기계</strong> 로 알려저 있습니다.</div>
+</div>
+<div class="line-block">
+<div class="line">라이프 게임 테스트 <a class="footnote-reference" href="#id34" id="id7">[3]</a></div>
+</div>
+</div>
+<div class="section" id="id8">
+<h3>감염 시뮬레이션<a class="headerlink" href="#id8" title="제목 주소">¶</a></h3>
+<div class="line-block">
+<div class="line">라이프 게임의 확장형인 감염 시뮬레이션 모델은 한칸의 상태를 전염병에 걸린 사람의 상태로 설정 후 상태 변화를 표현한 것으로 볼 수 있습니다.</div>
+</div>
+<div class="line-block">
+<div class="line">특히 건강한사람 (Susceptible) / 감염자 (Infected) / 항체 보유자 (Recovered)의 세 상태를 기반으로 둔 감염 시뮬레이션 모델을 SIR 모델 <a class="footnote-reference" href="#id36" id="id9">[4]</a> 이라고 하고 일정한 규칙을 정하면 감염자 수 등에 대한 정보를 미분 방정식으로 나타낼 수 있다고 합니다. 이러한 모델은 감염에 대한 역학 조사의 연구에 이용할 수 있다고 하고, 특히나 잠복기에 있는 건강한 사람 (Exposed)의 상태를 추가한 모델을 SEIR모델이라고 하고 이 모델 또한 미분방정식으로 표현할 수 있다고 합니다.</div>
+</div>
+</div>
+</div>
+<div class="section" id="id10">
+<span id="id11"></span><h2>02 유한 오토마톤<a class="headerlink" href="#id10" title="제목 주소">¶</a></h2>
+<div class="section" id="id12">
+<h3>오토마톤<a class="headerlink" href="#id12" title="제목 주소">¶</a></h3>
+<div class="line-block">
+<div class="line">유한 오토마톤이란 외부 입력이나 이벤트가 발생할 때 유한한 패턴 내에서 상태를 변화시키는 모델을 가지는 기계 <a class="footnote-reference" href="#id37" id="id13">[5]</a> 를 말합니다.</div>
+</div>
+<div class="line-block">
+<div class="line">오토마톤은 시간의 경과 / 상태의 변화를 표현하고, 시간의 흐름에 따른 공간적 구조 변화를 연구하는 이론입니다. 앞서 언급한 라이프 게임과 같이 칸(셀)을 이용하면 <strong>셀 오토마톤</strong> 이라고 합니다.</div>
+</div>
+<div class="line-block">
+<div class="line">유한 오토마톤의 동작은 다이어그램으로 나타낼 수 있는데 이처럼 원과 선을 연결한 형태의 그림을 <strong>상태 전이 다이어그램</strong> 이라고 합니다. 이 상태전이 다이어그램은 시작점과 종료점이 정해져 있으며, 종료점에 다 다라 끝난 상태를 접수 상태 (accept state) 라고 합니다.</div>
+</div>
+<div class="line-block">
+<div class="line">유한 오토마톤에서 접수 상태 즉, 종료점에서 끝난 상태에서 실행 종료가 되지 않으면 오류 등이 발생한 비정상 상태를 나타냅니다.</div>
+</div>
+</div>
+<div class="section" id="id14">
+<h3>오토마톤과 언어 이론<a class="headerlink" href="#id14" title="제목 주소">¶</a></h3>
+<div class="line-block">
+<div class="line">오토마톤의 기본적인 특징은 <strong>상태의 변화와 규칙</strong> 을 나타낼 수 있다는 것입니다.</div>
+</div>
+<div class="line-block">
+<div class="line">이러한 특징은 언어의 구분 모델을 나타내는 데이도 이용할 수 있습니다. <a class="footnote-reference" href="#id39" id="id15">[6]</a> 언어 이론에서는 문자들의 집합을 알파벳이라고 하고, 알파벳 중에서 문자의 중복을 허용한 상태를 문자열이라고 합니다.</div>
+</div>
+<div class="line-block">
+<div class="line">예를 들면 유전자를 코딩하는 염기서열은 Σ = {A, T, G, C}, 단백질을 코딩하는 아미노산 서열은 Σ = {20가지 아미노산} 을 알파벳으로 하는 Σ를 이용한 문자열 입니다.</div>
+</div>
+<div class="line-block">
+<div class="line">각종 프로그래밍 언어에서 많이 활용되고 있는 정규 표현식 또한 오토마톤으로 나타낼 수 있습니다.</div>
+</div>
+</div>
+</div>
+<div class="section" id="id16">
+<span id="id17"></span><h2>03 마르코프 모델<a class="headerlink" href="#id16" title="제목 주소">¶</a></h2>
+<div class="section" id="id18">
+<h3>마르코프 모델의 주요 개념<a class="headerlink" href="#id18" title="제목 주소">¶</a></h3>
+<div class="line-block">
+<div class="line">앞서 언급한 '유한 오토마톤'에서 오토마톤은 유한한 상태를 가지는 기계라고 하였습니다. 이때 상태의 변화를 <strong>러시아의 수학자 마르코프</strong> 가 제시한 모델로 표현한 것이 마르코프 모델입니다.</div>
+</div>
+<div class="line-block">
+<div class="line">마르코프 모델의 주요 개념은 <strong>확률 과정 &gt; 마르코프 과정 &gt; 이산 상태 마르코프 과정 &gt; 마르코프 연쇄</strong> 의 범위로 나타낼 수 있습니다.</div>
+</div>
+</div>
+<div class="section" id="id19">
+<h3>마르코프 모델의 예<a class="headerlink" href="#id19" title="제목 주소">¶</a></h3>
+<div class="line-block">
+<div class="line">마르코프 모델은 상태에 따라 비용을 설정하고, 변화할때 비용을 더하여 누적비용을 추정하는 상황에 응용 할 수 있습니다. 대표적으로 광고의 열람 효과를 포함한 가치를 정상분포로 계산하는 것 등이 있습니다.</div>
+</div>
+<div class="line-block">
+<div class="line">앞서 언급한 SEIR 모델을 마르코프 모델로 다룰 수 있습니다. 이 때 4 가지의 상태는 확률을 기반으로 하여 변화하게 됩니다.</div>
+</div>
+</div>
+</div>
+<div class="section" id="id20">
+<span id="id21"></span><h2>04 상태 기반 에이전트<a class="headerlink" href="#id20" title="제목 주소">¶</a></h2>
+<div class="section" id="ai">
+<h3>게임 AI<a class="headerlink" href="#ai" title="제목 주소">¶</a></h3>
+<div class="line-block">
+<div class="line">위에서 설명한 인공 생명 시뮬레이션을 게임 AI에 활요하게 되면, 게임의 등장 인물이나 필드의 구성요소 각각을 유한 오토마톤(유한 상태 기계)으로 설정해 인공지능을 구현할 수 있다.</div>
+</div>
+<div class="line-block">
+<div class="line">엄밀히 말하여 2010년 이후의 인공지능에 유한 오토마톤 기반의 AI를 포함시키는 것은 논란의 여지가 있겠지만, 게임 AI는 사람을 대신하여 행동하는 프로그램으로써 인공지능 이해한다는 관점에서 알아야 할 점들을 소개합니다.</div>
+</div>
+</div>
+<div class="section" id="id22">
+<h3>에이전트<a class="headerlink" href="#id22" title="제목 주소">¶</a></h3>
+<div class="line-block">
+<div class="line">게임에 존재하는 <strong>개별 상태 기계를 총괄하는 시스템</strong> 을 말합니다.</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>에이전트</strong> 는 <strong>다른 에이전트</strong> 와 <strong>상호작용</strong> 을 하면서 이용자인 <strong>플레이어</strong> 에게 정보와 자극을 제공합니다.</div>
+</div>
+<div class="line-block">
+<div class="line">에이전트의 설계와 구축은 사람인 <strong>플레이어</strong> 와 게임 AI가 <strong>상호작용</strong> 할 수 있는 구조를 만드는데 큰 도움을 주게 됩니다.</div>
+</div>
+<div class="line-block">
+<div class="line">여기서 말하는 에이전트는 소프트웨어(지능형) 에이전트 <a class="footnote-reference" href="#id41" id="id23">[7]</a> 를 의미하는데, 지능형 에이전트는 <strong>자율성(autonomy) / 사회성(social ability) / 반응성(reaactivity) / 능동성(proactivity) / 시간연속성(temporal continuity) / 목표지향성(goal-orientedness)</strong> 의 6가지 특징을 지녀야 합니다.</div>
+</div>
+<div class="line-block">
+<div class="line">에이전트는 동작하는 상태일 때가 많은데 이 경우를 이벤트라고 합니다. 이용자가 어떤 동작을 실행한 결과로 상태 기계에 변화가 일어나게 되는데 이러한 동작 상태 기반의 에이전트를 구동형 에이전트 <a class="footnote-reference" href="#id43" id="id24">[8]</a> 라고 합니다.</div>
+</div>
+</div>
+<div class="section" id="id25">
+<h3>보드게임<a class="headerlink" href="#id25" title="제목 주소">¶</a></h3>
+<div class="line-block">
+<div class="line">보드게임은 에이전트를 실제로 테스트 해보고 이용할 수 있는 대표적인 사례입니다.</div>
+</div>
+<div class="line-block">
+<div class="line">가장 간단한 형태의 보드게임 모델로는 오델로(리버시) <a class="footnote-reference" href="#id44" id="id26">[9]</a> 라는 바둑판에 돌을 놓는 게임이 있습니다. 오델로에서 컴퓨터 플레이어를 만들 때는 앞에서 명시한 셀 오토마톤의 사고방식을 도입합니다.</div>
+</div>
+<div class="line-block">
+<div class="line">오델로는 기본적인 규칙에 따라 프로그래밍이 되어있고 이를 바탕으로 게임을 진행하게 됩니다.</div>
+</div>
+</div>
+<div class="section" id="id27">
+<h3>보드게임의 게임 이론<a class="headerlink" href="#id27" title="제목 주소">¶</a></h3>
+<div class="line-block">
+<div class="line">게임을 진행하면서 모든 상태를 계산할 수 있으면 <strong>완전 정보 게임</strong> 이라고 하고, 체스/장기/바둑과 같은 게임이 이에 속합니다. 또한 2명이 대전하므로 우연에 의한 게임 진행상태가 정해지지 않기 때문에 상태를 예측할 수 있어서 <strong>2인 제로섬 유한 확정 완전 정보게임</strong> 이라고도 합니다.</div>
+</div>
+<div class="line-block">
+<div class="line">게임 이론은 수리학적 영역뿐만 아니라 경제학 등의 분야에서도 이용이 되는데, 경제학적 측면에서의 <strong>불완전 정보 게임</strong> 으로는 <em>죄수의 딜레마</em> <a class="footnote-reference" href="#id46" id="id28">[10]</a> 가 있습니다. 이 죄수의 딜레마의 경우는 자신의 선택지와 상대방의 선택지가 모두 공개되어 있고 선택지 또한 공개되어 있어 <strong>완비 정보 게임</strong> 에 해당합니다.</div>
+</div>
+</div>
+<div class="section" id="id29">
+<h3>복잡하게 구성된 에이전트 사용<a class="headerlink" href="#id29" title="제목 주소">¶</a></h3>
+<div class="line-block">
+<div class="line">심시티 같은 도시 건설 &amp; 경영 시뮬레이션 게임 혹은 삼국지와 같은 전략/전투 시뮬레이션의 경우 또한 에이전트 기반으로 환경을 제어합니다.</div>
+</div>
+<div class="line-block">
+<div class="line">심시티의 경우는 다수의 에이전트가 복잡하게 상호작용 하면서 시간을 중심으로 게임을 진행합니다. 도시의 구성 요소를 배치하는 경우, 필드의 셀이 총 4개의 층으로 구성됩니다.</div>
+</div>
+<p class="rubric">Footnotes</p>
+<table class="docutils footnote" frame="void" id="id30" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id4">[1]</a></td><td>생물과 무생물을 구별하는 가장 핵심적인 특징은 [ 자기증식능력 / 에너지변환능력 / 항상성유지능력 ]을 가지고 있어야 합니다. <a class="reference external" href="https://ko.wikipedia.org/wiki/%EC%83%9D%EB%AC%BC">위키피디아:생물</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id32" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id6">[2]</a></td><td><a class="reference external" href="https://ko.wikipedia.org/wiki/%EB%9D%BC%EC%9D%B4%ED%94%84_%EA%B2%8C%EC%9E%84">위키피디아:라이프게임</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id34" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id7">[3]</a></td><td><a class="reference external" href="http://gmlive.narod.ru/download/live/version_0_3/gamelive.html">라이프 게임 테스트</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id36" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id9">[4]</a></td><td><a class="reference external" href="http://cdc.go.kr/CDC/cms/content/mobile/16/12516_view.html">질병관리본부:SIR모델</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id37" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id13">[5]</a></td><td><a class="reference external" href="https://ko.wikipedia.org/wiki/%EC%9C%A0%ED%95%9C_%EC%83%81%ED%83%9C_%EA%B8%B0%EA%B3%84">위키피디아:유한상태기계</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id39" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id15">[6]</a></td><td><a class="reference external" href="https://ko.wikipedia.org/wiki/%ED%98%95%EC%8B%9D_%EC%96%B8%EC%96%B4">위키피디아:형식언어</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id41" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id23">[7]</a></td><td><a class="reference external" href="https://ko.wikipedia.org/wiki/%EC%A7%80%EB%8A%A5%ED%98%95_%EC%97%90%EC%9D%B4%EC%A0%84%ED%8A%B8">위키피디아:지능형에이전트</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id43" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id24">[8]</a></td><td><a class="reference external" href="http://aicat.inf.ed.ac.uk/entry.php?id=635">CAIT:구동형에이전트</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id44" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id26">[9]</a></td><td><a class="reference external" href="https://ko.wikipedia.org/wiki/%EC%98%A4%EB%8D%B8%EB%A1%9C">위키피디아:오델로(리버시)</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id46" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id28">[10]</a></td><td><a class="reference external" href="https://ko.wikipedia.org/wiki/%EC%A3%84%EC%88%98%EC%9D%98_%EB%94%9C%EB%A0%88%EB%A7%88">위키피디아:죄수의딜레마</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id48" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[11]</td><td><a href="#id49"><span class="problematic" id="id50">``</span></a>_</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id51" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[12]</td><td><a href="#id52"><span class="problematic" id="id53">``</span></a>_</td></tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 
 

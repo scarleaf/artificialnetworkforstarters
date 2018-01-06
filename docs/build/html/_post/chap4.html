@@ -94,7 +94,38 @@
 <li class="toctree-l1"><a class="reference internal" href="chap1.html">Chapter 1. 인공지능의 과거, 현재, 미래</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chap2.html">Chapter 2. 규칙 기반 모델의 발전</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chap3.html">Chapter 3. 오토마톤과 인공 생명 프로그램</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Chapter 4. 가중치와 최적해 탐색</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Chapter 4. 가중치와 최적해 탐색</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">01 선형 문제와 비선형 문제</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">두 변수의 상관관계</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">선형 계획법</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">비선형 계획법</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">02 회귀분석</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id6">회귀분석</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">단순회귀</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">다중회귀</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">로지스틱 회귀</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id10">03 가중 회귀분석</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id11">최소제곱법 수정</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lowess-locally-weighted-scatterplot-smoothing">LOWESS(Locally Weighted Scatterplot Smoothing) 분석</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id12">로버스트 평활화</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#l2-l1">L2 정규화, L1 정규화</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id14">04 유사도</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id15">유사도</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id16">코사인 유사도</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id17">상관계수</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id18">상관함수</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id19">거리와 유사도</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id20">05 텐서플로를 이용한 선형 회귀 예제</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="chap5.html">Chapter 5. 가중치와 최적화 프로그램</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chap6.html">Chapter 6. 통계 기반 머신러닝 1 - 확률분포와 모델링</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chap7.html">Chapter 7. 통계 기반 머신러닝 2 - 자율 학습과 지도 학습</a></li>
@@ -171,6 +202,303 @@
   <div class="section" id="chapter-4">
 <span id="chapter4"></span><h1>Chapter 4. 가중치와 최적해 탐색<a class="headerlink" href="#chapter-4" title="제목 주소">¶</a></h1>
 <p>이 문서는 한빛미디어에서 나온 <code class="docutils literal"><span class="pre">처음</span> <span class="pre">배우는</span> <span class="pre">인공지능</span></code> 을 공부하면서 정리한 것이다.</p>
+<div class="section" id="id1">
+<h2>01 선형 문제와 비선형 문제<a class="headerlink" href="#id1" title="제목 주소">¶</a></h2>
+<div class="section" id="id2">
+<h3>두 변수의 상관관계<a class="headerlink" href="#id2" title="제목 주소">¶</a></h3>
+<div class="line-block">
+<div class="line">다수의 데이터에서 어떤 결과를 예측하는 경우 2개의 항목(변숫값)을 비교할 때가 많습니다. 2개 변숫값 각각을 그래프의 X축과 Y축값으로 정한 후 교차하는 곳에 점을 찍었을 때 분포는 선형과 비선형으로 나뉩니다.</div>
+</div>
+</div>
+<div class="section" id="id3">
+<h3>선형 계획법<a class="headerlink" href="#id3" title="제목 주소">¶</a></h3>
+<div class="line-block">
+<div class="line">선형 계획법(Linear Programming) : 선형 함수를 이용해 점의 분포를 여러 개 그룹으로 나눌 수 있을 때 &quot;선형 분리할 수 있다&quot;고 하며, 선형 함수를 최적화해 문제를 해결하는 방법</div>
+</div>
+</div>
+<div class="section" id="id4">
+<h3>비선형 계획법<a class="headerlink" href="#id4" title="제목 주소">¶</a></h3>
+<div class="line-block">
+<div class="line">비선형 계획법(Nonlinear Programming) : 변숫값 쌍으로 구성하는 점의 분포를 선형 함수로 표현할 수 없고 사상 개념(변숫값 쌍을 함수 형태로 변환한 것)으로 대응할 수 없는 비선형 문제를 해결하는 방법</div>
+</div>
+<blockquote>
+<div><ol class="arabic simple">
+<li>볼록 최적화(Convex Optimization) : 볼록 함수와 오목 함수로 점의 분포를 나타낼 수 있는 볼록 계획 문제를 해결하는 방법</li>
+<li>분기 한정법(BB : branch and bound) : 볼록 함수가 아닐 때 선형 계획 문제와 볼록 계획 문제를 조합하여 해결하는 방법</li>
+</ol>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>02 회귀분석<a class="headerlink" href="#id5" title="제목 주소">¶</a></h2>
+<div class="section" id="id6">
+<h3>회귀분석<a class="headerlink" href="#id6" title="제목 주소">¶</a></h3>
+<p>회귀분석 : 주어진 데이터로 어떤 함수를 만들어 낸 후, 이 함수를 피팅하는 작업. 피팅은 함수에서 발생하는 차이(잔차의 크기)가 최소화되도록 함수를 조정해주는 것을 의미.</p>
+</div>
+<div class="section" id="id7">
+<h3>단순회귀<a class="headerlink" href="#id7" title="제목 주소">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li>요소들 사이의 비례 관계를 활용하는 가장 기본적인 회귀분석 방법.</li>
+<li>회귀직선의 기울기와 절편 구하기</li>
+</ul>
+<blockquote>
+<div><ol class="arabic simple">
+<li>y=a +bx+e 에서 기울기와 절편을 알면 임의의 x에 대한 결괏값 y를 얻을 수 있음.</li>
+<li>y : 종속 변수 (목적 변수), x : 종속 변수 (설명 변수), e : 오차항</li>
+<li>단순 회귀 모델 식을 기반으로 잔차의 제곱인 E를 구하는 식 도출.</li>
+<li>E : 목적 함수</li>
+<li>a, b 각각의 편미분을 이용해 연립 방정식을 만들어서 잔차의 제곱인 E가 최소화되는 값을 구함.</li>
+<li>연립 편미분 방정식을 풀면 a, b 각각을 구하는 식으로 변환 가능.</li>
+</ol>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="id8">
+<h3>다중회귀<a class="headerlink" href="#id8" title="제목 주소">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li>독립 변수가 한 개인 단순회귀와 달리, 여러 개일 때 사용하는 회귀분석 방법. y=a+bx1+rx2+e (x1, x2는 독립 변수)</li>
+</ul>
+<blockquote>
+<div><ol class="arabic simple">
+<li>독립 변수가 늘 때의 단점</li>
+<li>다중공선성(Multicollinearity) 문제 : 독립 변수가 늘면 독립 변수들 사이에 존재하는 상관관계가 개입해 결과에 영향을 주는 것. PLS 회귀와 L1 정규화 등으로 해결가능.</li>
+<li>다항식 회귀 : 산포도의 점 분포가 곡선 상에 위치하는 느낌을 받을 때 차수를 올려 대응하는 회귀분석 방법. 선형회귀의 한 종류.</li>
+<li>과적합(Overfitting)의 문제점 : 차수를 올리면 잔차가 0에 근접할 수 있으나 이는 이미 주어진 데이터가 대상일 때 예측에 근접한 결과를 얻을 수 있고 앞으로 수집할 데이터를 대상으로 크게 벗어난 결과가 나올 가능성이 큼. 그러므로 회귀분석 할 때는 가급적 독립 변수가 낮은 차수를 갖는 모델을 설계하여 과적합을 피하는 것이 중요함.</li>
+<li>최소제곱법 : 최소제곱법은 잔차 제곱의 합인 e값을 최소화하는 방법.</li>
+</ol>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="id9">
+<h3>로지스틱 회귀<a class="headerlink" href="#id9" title="제목 주소">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li>종속 변수에 약간의 수정을 가한 선형회귀. 일반화 선형 모델의 하나로 분류함.</li>
+<li>로지스틱 모델의 일반식</li>
+<li><dl class="first docutils">
+<dt>로짓(Logit) 변환 <span class="classifier-delimiter">:</span> <span class="classifier">종속 변수 y에 로그를 적용해 y'로 변환하는 것.</span></dt>
+<dd>(<a class="reference external" href="http://www.saedsayad.com/images/ANN_Sigmoid.png">http://www.saedsayad.com/images/ANN_Sigmoid.png</a>)</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="id10">
+<h2>03 가중 회귀분석<a class="headerlink" href="#id10" title="제목 주소">¶</a></h2>
+<div class="section" id="id11">
+<h3>최소제곱법 수정<a class="headerlink" href="#id11" title="제목 주소">¶</a></h3>
+<blockquote>
+<div><ol class="arabic simple">
+<li>최소제곱법은 특잇값(Singular Value)에 취약하다는 약점 존재.</li>
+<li>특잇값에 패널티를 부여하거나 제외하는 방법 등으로 수정해야 함.</li>
+</ol>
+</div></blockquote>
+</div>
+<div class="section" id="lowess-locally-weighted-scatterplot-smoothing">
+<h3>LOWESS(Locally Weighted Scatterplot Smoothing) 분석<a class="headerlink" href="#lowess-locally-weighted-scatterplot-smoothing" title="제목 주소">¶</a></h3>
+<blockquote>
+<div><ol class="arabic simple">
+<li>어떤 한 지점에 가중회귀 함수를 사용해 평활화(smoothing)를 실행한 회귀 식 도출 방법.</li>
+<li>임의로 설정한 폭 d(x)가 있을 때, xi의 최솟값부터 차례로 값을 증가시키면서 x에 가까운 xi 값이 되도록 가중치 wi를 산출함.</li>
+<li>독립 변수의 값에서 멀어져 있는 점의 기울기를 조절함으로써 특이점 때문에 받는 영향을 무시하도록 보정하는 것.</li>
+</ol>
+</div></blockquote>
+</div>
+<div class="section" id="id12">
+<h3>로버스트 평활화<a class="headerlink" href="#id12" title="제목 주소">¶</a></h3>
+<blockquote>
+<div><ol class="arabic simple">
+<li>평활화를 실행하는 과정에서 특잇값을 없앨 수 있도록 가중치 계수 w를 설정하는 방법.</li>
+<li>중위 절대편차(Median Absolute Deviation, MAD)를 산출했을 때 6배 이상의 잔차 ri가 존재하면 wi를 0으로 설정함.</li>
+<li>변화 상태에서 크게 벗어났다고 예상되는 점이 특이점 때문에 받는 영향을 무시하도록 보정하는 것.</li>
+</ol>
+</div></blockquote>
+</div>
+<div class="section" id="l2-l1">
+<h3>L2 정규화, L1 정규화<a class="headerlink" href="#l2-l1" title="제목 주소">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li>최소제곱법으로 구성한 방정식에 panelty를 부여하는 것.</li>
+</ul>
+<blockquote>
+<div>(<a class="reference external" href="http://cfile25.uf.tistory.com/image/99B7603359820B9228CA6B">http://cfile25.uf.tistory.com/image/99B7603359820B9228CA6B</a>)</div></blockquote>
+<ol class="arabic simple">
+<li>L2 정규화</li>
+</ol>
+<blockquote>
+<div><ol class="arabic simple">
+<li>최소제곱법의 종속 변수인 잔차 제곱의 합에 가중치 계수인 w1 제곱의 합을 panelty로 추가한 것.</li>
+<li>능형회귀(Ridge Regression)라고도 함.</li>
+<li>회귀 모델로 계산함.</li>
+</ol>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li>L1 정규화</li>
+</ol>
+<blockquote>
+<div><ol class="arabic simple">
+<li>종속&nbsp; 변수에 wi 절댓값을 panelty로 더해줌.</li>
+<li>Lasso (Least Absolute Shrinkage Selection Operator)라고도 함.</li>
+<li>볼록 최적화의 추정 알고리즘 사용함.</li>
+</ol>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><a class="reference external" href="https://www.slideshare.net/ShangxuanZhang/ridge-regression-lasso-and-elastic-net">외부강의자료</a></li>
+</ol>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="id14">
+<h2>04 유사도<a class="headerlink" href="#id14" title="제목 주소">¶</a></h2>
+<div class="section" id="id15">
+<h3>유사도<a class="headerlink" href="#id15" title="제목 주소">¶</a></h3>
+<blockquote>
+<div><ol class="arabic simple">
+<li>변숫값 쌍이 얼마나 '비슷한가' 확인하는 과정은 컴퓨터가 자동으로 답을 추측하는 과정에서 매우 중요함.</li>
+</ol>
+</div></blockquote>
+</div>
+<div class="section" id="id16">
+<h3>코사인 유사도<a class="headerlink" href="#id16" title="제목 주소">¶</a></h3>
+<blockquote>
+<div><ol class="arabic simple">
+<li>유사도 : 변숫값 x, y가 주어졌을 때 cosθ의 값.</li>
+<li>범위 : 0 ~ 1 (유사도가 높을수록 1에 가까워짐)</li>
+<li>문서 사이의 유사도를 계산하는데 사용됨.</li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li>단어목록 n : 유사도를 요구하는 문서 1과 문서 2의 모든 단어로 구성.</li>
+<li>x : 문서 1의 단어가 나오는 빈도 (i = 1, 2, ..., n)</li>
+<li>y : 문서 2의 단어가 나오는 빈도 (i = 1, 2, ..., n)</li>
+</ul>
+</div></blockquote>
+<ol class="arabic simple" start="4">
+<li>변숫값 쌍은 산포도를 사용해 점의 집합으로 나타낼 수 있으며, 점 각각은 원점으로부터의 벡터로 나타낼 수 있음.</li>
+</ol>
+</div></blockquote>
+</div>
+<div class="section" id="id17">
+<h3>상관계수<a class="headerlink" href="#id17" title="제목 주소">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li>상관관계 : 2개의 확률 변수 사이 분포 규칙의 관계 (한 쪽이 증가하면 다른 한 쪽도 증가하고, 한 쪽이 감소하면 다른 한 쪽도 감소하는 것.)로 대부분 선형 관계의 정도를 의미함.</li>
+</ul>
+<ol class="arabic simple">
+<li>피어슨 상관계수</li>
+</ol>
+<blockquote>
+<div><ol class="arabic simple">
+<li>r : -1(음의 상관계수) ~ 1(양의 상관계수)</li>
+<li>절댓값 0.7 이상이면 상관관계가 있다고 판단.</li>
+</ol>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li>스피어만의 순위 상관계수</li>
+</ol>
+<blockquote>
+<div><ol class="arabic simple">
+<li>피어슨 상관계수의 특별한 경우. 같은 순위가 있다면 순위를 보정해야 하지만, 적을 때는 순위 보정 필요없음.</li>
+</ol>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li>켄달의 순위 상관계수</li>
+</ol>
+<blockquote>
+<div><ol class="arabic simple">
+<li>같은 순위인 데이터의 개수 K, 다른 순위인 데이터의 개수 L을 사용하여 계산.</li>
+<li>r : -1 ~ 1</li>
+</ol>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="id18">
+<h3>상관함수<a class="headerlink" href="#id18" title="제목 주소">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li>함수의 유사도를 구할 때 사용하는 방법.</li>
+<li>특정 시점의 결괏값 쌍으로 상관계수를 구한 후 이를 함수로 나타낸 것.</li>
+</ul>
+<ol class="arabic simple">
+<li>교차상관함수 : 두 함수에서 어떤 시점의 두 함수 결괏값 쌍의 상관계수를 구해 함수로 나타내는 것.</li>
+<li>자기상관함수 : 두 함수가 같은 함수일 때 서로 다른 시점의 함수 결괏값 상관계수를 구할 때 사용함.</li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li>함수의 주기성 검증</li>
+<li>합성곱 처리</li>
+<li>푸리에 변환 등의 신호 처리에 사용</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="id19">
+<h3>거리와 유사도<a class="headerlink" href="#id19" title="제목 주소">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li>거리가 가까울수록 유사도가 높다.</li>
+</ul>
+<ol class="arabic simple">
+<li>편집 거리(Edit Distance)</li>
+</ol>
+<blockquote>
+<div><ol class="arabic simple">
+<li>치환, 삽입, 삭제의 세 가지 요소에 각각 panelty를 설정하는 형태를 취하고 panelty의 합계를 점수로 설정해 유사도를 구하는 방법.</li>
+</ol>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li>레벤슈타인 거리(Levenshtein Distance)</li>
+</ol>
+<blockquote>
+<div><ol class="arabic simple">
+<li>값이 아닌 문자열 사이의 유사도를 나타낼 때 사용하는 방법.</li>
+<li>영어 단어의 검색 서비스</li>
+</ol>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li>해밍&nbsp;거리(Hamming Distance)</li>
+</ol>
+<blockquote>
+<div><ol class="arabic simple">
+<li>고정 길이의 이진 데이터에서 서로 다른 비트 부호 갖는 문자 개수.</li>
+<li>2개 비트열의 배타적 논리합을 구한 결과에 존재하는 1의 개수.</li>
+<li>오류 검사, 유전자를 구성하는 염기서열이나 아미노산 서열의 상동성을 계산하는데 사용</li>
+</ol>
+</div></blockquote>
+<ol class="arabic simple" start="4">
+<li>유클리드 거리</li>
+</ol>
+<blockquote>
+<div><ol class="arabic simple">
+<li>2차원 분산형 차트에서 변숫값 쌍의 관계를 표현할 때 점 2개의 좌표 사이 직선거리를 의미.</li>
+</ol>
+</div></blockquote>
+<ol class="arabic simple" start="5">
+<li>마할라노비스 거리 (Mahalanobis Distance)</li>
+</ol>
+<blockquote>
+<div><ol class="arabic simple">
+<li>유클리드 거리에서 점 수를 늘려 거리를 구하는 것.</li>
+<li>데이터의 상관관계를 고려한 여러 개의 점 집단에서 어느 점까지의 거리를 계산.</li>
+</ol>
+</div></blockquote>
+<ol class="arabic simple" start="6">
+<li>자카드 계수</li>
+</ol>
+<blockquote>
+<div><ol class="arabic simple">
+<li>집합 2개의 유사도를 구할 때 집합 2개의 공통 요소 수를 전체 요소 수로 나눈 것.</li>
+</ol>
+</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="id20">
+<h2>05 텐서플로를 이용한 선형 회귀 예제<a class="headerlink" href="#id20" title="제목 주소">¶</a></h2>
+</div>
 </div>
 
 
