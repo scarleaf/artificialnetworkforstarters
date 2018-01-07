@@ -95,7 +95,25 @@
 <li class="toctree-l1"><a class="reference internal" href="chap2.html">Chapter 2. 규칙 기반 모델의 발전</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chap3.html">Chapter 3. 오토마톤과 인공 생명 프로그램</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chap4.html">Chapter 4. 가중치와 최적해 탐색</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Chapter 5. 가중치와 최적화 프로그램</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Chapter 5. 가중치와 최적화 프로그램</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#graph01">01 그래프 이론</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">그래프</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">무향 그래프와 유향 그래프</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">그래프의 행렬 표현</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">트리 구조 그래프</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#graph02">02 그래프 탐색과 최적화</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id11">탐색 트리 구축</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id12">탐색 트리 추적 방법</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id13">효율 좋은 탐색 방법</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id14">비용에 따른 탐색 방법</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="chap6.html">Chapter 6. 통계 기반 머신러닝 1 - 확률분포와 모델링</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chap7.html">Chapter 7. 통계 기반 머신러닝 2 - 자율 학습과 지도 학습</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chap8.html">Chapter 8. 강화 학습과 분산 인공지능</a></li>
@@ -171,8 +189,73 @@
   <div class="section" id="chapter-5">
 <span id="chapter5"></span><h1>Chapter 5. 가중치와 최적화 프로그램<a class="headerlink" href="#chapter-5" title="제목 주소">¶</a></h1>
 <p>이 문서는 한빛미디어에서 나온 <code class="docutils literal"><span class="pre">처음</span> <span class="pre">배우는</span> <span class="pre">인공지능</span></code> 을 공부하면서 정리한 것이다.</p>
-<p>dafsdfsfd
-asdfasdfasdfasdf</p>
+<div class="section" id="graph01">
+<span id="id1"></span><h2>01 그래프 이론<a class="headerlink" href="#graph01" title="제목 주소">¶</a></h2>
+<div class="section" id="id2">
+<h3>그래프<a class="headerlink" href="#id2" title="제목 주소">¶</a></h3>
+<p><a class="reference external" href="https://ko.wikipedia.org/wiki/%EA%B7%B8%EB%9E%98%ED%94%84">그래프</a> 란 점과 점을 연결하는 선으로 구성된 형태를 말합니다. 점은 정점 (Vertex) 또는 노드 (node) 라고 부르고 선은 간선 (edge)라고 부릅니다.</p>
+<a class="reference internal image-reference" href="../_images/chap5_1.png"><img alt="alternate text" class="align-center" src="../_images/chap5_1.png" style="width: 400px; height: 100px;" /></a>
+</div>
+<div class="section" id="id4">
+<h3>무향 그래프와 유향 그래프<a class="headerlink" href="#id4" title="제목 주소">¶</a></h3>
+<ul class="simple">
+<li>무향 그래프 (undirected graph): 그래프의 간선에 방향이 없는 그래프</li>
+<li>유향 그래프 (directed graph): 그래프의 간선에 방향이 있는 그래프</li>
+<li>유향 순회 그래프 (directed cyclic graph): 어떤 노드에서 자신으로 돌아오는 path가 있는 그래프</li>
+<li><a class="reference external" href="https://en.wikipedia.org/wiki/Directed_acyclic_graph#Definitions">유향 비순회 그래프 (directed acyclic graph)</a>: cycle 이 없는 유향 그래프 (책의 설명이 좀 이상합니다. - 어떤 정점에서 출발한 후 해당 정점에 돌아오는 경로가 하나인 그래프)</li>
+<li>간선 가중 그래프: 간선에 가중치가 있는 그래프 (aka network)</li>
+<li>정점 가중 그래프: 정점에 가중치가 있는 그래프 (aka network)</li>
+</ul>
+</div>
+<div class="section" id="id5">
+<h3>그래프의 행렬 표현<a class="headerlink" href="#id5" title="제목 주소">¶</a></h3>
+<p>그래프를 나타내는 방법 중에서 행렬로 나타내는 방법을 소개합니다. 이 책에서는 인접행렬(adjacency matrix) 와 근접행렬(incidence matrix) 를 설명합니다.</p>
+<ul class="simple">
+<li><a class="reference external" href="https://ko.wikipedia.org/wiki/%EC%9D%B8%EC%A0%91%ED%96%89%EB%A0%AC">인접행렬</a>: 정점 사이의 관계를 타나내는 행렬</li>
+<li><a class="reference external" href="https://en.wikipedia.org/wiki/incidence_matrix">근접행렬</a>: 정점과 변의 관계를 타나내는 행렬</li>
+</ul>
+<a class="reference internal image-reference" href="../_images/chap5_2.png"><img alt="alternate text" class="align-center" src="../_images/chap5_2.png" style="width: 500px; height: 100px;" /></a>
+</div>
+<div class="section" id="id9">
+<h3><a class="reference external" href="https://en.wikipedia.org/wiki/Tree_structure">트리 구조 그래프</a><a class="headerlink" href="#id9" title="제목 주소">¶</a></h3>
+<p>트리 구조는 그래프구조의 하나로 조상이 없는 노드를 root 노드로 두고 그 아래로 자식관계를 가지는 후손 노드들이 펼쳐지는 구조이다. 이를 통해 하나의 정점에서 다른 정점으로 가는 경로가 단 한개만 존재한다.</p>
+</div>
+</div>
+<div class="section" id="graph02">
+<span id="id10"></span><h2>02 그래프 탐색과 최적화<a class="headerlink" href="#graph02" title="제목 주소">¶</a></h2>
+<div class="section" id="id11">
+<h3>탐색 트리 구축<a class="headerlink" href="#id11" title="제목 주소">¶</a></h3>
+<p>출발점에서 목적지까지를 노드로 정의하고 각 노드와 에지에 이익, 비용과 같은 평가 값을 저장해두고 목적지에 도달하는 최적 경로를 찾을 수 있도록 트리를 구축하는 것을 말하고자 합니다.
+가장 대표적인 것이 데이터베이스의 인덱스에 사용하는 이진 탐색 트리나 미로 찾기같은 경로 탐색을 위한 트리가 있습니다.</p>
+</div>
+<div class="section" id="id12">
+<h3>탐색 트리 추적 방법<a class="headerlink" href="#id12" title="제목 주소">¶</a></h3>
+<ul class="simple">
+<li>깊이 우선 탐색:</li>
+</ul>
+<a class="reference internal image-reference" href="../_images/chap5.2.1.png"><img alt="alternate text" class="align-center" src="../_images/chap5.2.1.png" style="width: 500px; height: 100px;" /></a>
+<ul class="simple">
+<li>너비 우선 탐색:</li>
+</ul>
+<a class="reference internal image-reference" href="../_images/chap5.2.2.png"><img alt="alternate text" class="align-center" src="../_images/chap5.2.2.png" style="width: 500px; height: 100px;" /></a>
+</div>
+<div class="section" id="id13">
+<h3>효율 좋은 탐색 방법<a class="headerlink" href="#id13" title="제목 주소">¶</a></h3>
+<p>비용이라는 개념없이 순서만 처리하는 깊이 우선 탐색이나 너비 우선 탐색에는 한계가 있기 때문에 비용이라는 개념을 바탕으로 효율을 높여야 합니다.</p>
+<div class="section" id="id14">
+<h4>비용에 따른 탐색 방법<a class="headerlink" href="#id14" title="제목 주소">¶</a></h4>
+<p><em>A* algorithm의</em> <a class="reference external" href="https://ko.wikipedia.org/wiki/A*_%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98">wiki</a> <em>를 참조해서 일단 개념을 이해 하고 책 내용을 보는 것이 좋겠다.</em></p>
+<p>예를 들어 부산에서 서울로 출발할 때 동대구를 통과하느냐 경주를 통과하느냐에 따라 시간과 비용에 차이가 나는데 이런 경우 우선 비용을 정의해야 합니다. 이 책에서는 비용에 대해 다음의 세종류를 들고 있습니다.</p>
+<ul class="simple">
+<li>초기 상태 -&gt; 상태 <img class="math" src="../_images/math/63751cb2e98ba393b0f22e45ca127c3cebb61487.png" alt="s"/> 의 최적 경로 이동에 드는 비용의 총합 <img class="math" src="../_images/math/4afe52508449b713bfc0ffe4f981b47b5dcd6be0.png" alt="g(s)"/></li>
+<li>상태 <img class="math" src="../_images/math/63751cb2e98ba393b0f22e45ca127c3cebb61487.png" alt="s"/> -&gt; 목표하는 최적 경로 이동에 드는 비용의 총합 <img class="math" src="../_images/math/0e9a601721d62c7f2b93881106143d28611a0863.png" alt="h(s)"/></li>
+<li>상태 <img class="math" src="../_images/math/63751cb2e98ba393b0f22e45ca127c3cebb61487.png" alt="s"/> 를 거치는 초기 상태 -&gt; 목표의 최적 경로 이동에 드는 비용의 총합 <img class="math" src="../_images/math/876f4d8629eaeba1acfda3e9ed50312013361ba5.png" alt="f(s) (= g(s)+h(s))"/></li>
+</ul>
+<p><img class="math" src="../_images/math/3d7d61329d28c2d5372ce79b9a8ab52900f74400.png" alt="\hat{g}(s)"/> 를 최소화 하도록 노드 선택: 최적 탐색이라고 함 (optimal search). 탐색량이 많은 단점</p>
+<p><img class="math" src="../_images/math/5e54442eee5189386d74b7cbd73c2b697265dca5.png" alt="\hat{h}(s)"/> 를 최소화 하도록 노드 탐색: 최선 우선 탐색 (Best-first search). 잘못 된 결과가 나올 수 있는 단점</p>
+</div>
+</div>
+</div>
 </div>
 
 
