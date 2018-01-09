@@ -96,10 +96,10 @@ L2 정규화, L1 정규화
   2. Lasso (Least Absolute Shrinkage Selection Operator)라고도 함.
   3. 볼록 최적화의 추정 알고리즘 사용함.
 
- 3. 외부강의자료_
+ 3. 외부강의자료_: 15쪽의 Example 을 보면 Ridge 와 Lasso 등을 왜 하는지 직관적으로 알 수 있음
 .. _외부강의자료: https://www.slideshare.net/ShangxuanZhang/ridge-regression-lasso-and-elastic-net
-15쪽의 Example 을 보면 Ridge 와 Lasso 등을 왜 하는지 직관적으로 알 수 있음
-참고자료: `An Introduction to Statistical Learning <http://www-bcf.usc.edu/~gareth/ISL/>`_ 의 chap6 를 보면 좀 더 자세히 알 수 있음
+
+* 참고자료: `An Introduction to Statistical Learning <http://www-bcf.usc.edu/~gareth/ISL/>`_ 의 chap6 를 보면 좀 더 자세히 알 수 있음
 
 04 유사도
 =========
