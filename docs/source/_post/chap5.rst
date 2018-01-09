@@ -25,7 +25,7 @@ Chapter 5. 가중치와 최적화 프로그램
 *************************
 * 무향 그래프 (undirected graph): 그래프의 간선에 방향이 없는 그래프
 * 유향 그래프 (directed graph): 그래프의 간선에 방향이 있는 그래프
-* 유향 순회 그래프 (directed cyclic graph): 어떤 노드에서 자신으로 돌아오는 path가 있는 그래프 
+* 유향 순회 그래프 (directed cyclic graph): 어떤 노드에서 자신으로 돌아오는 path가 있는 그래프
 * `유향 비순회 그래프 (directed acyclic graph) <https://en.wikipedia.org/wiki/Directed_acyclic_graph#Definitions>`_: cycle 이 없는 유향 그래프 (책의 설명이 좀 이상합니다. - 어떤 정점에서 출발한 후 해당 정점에 돌아오는 경로가 하나인 그래프)
 * 간선 가중 그래프: 간선에 가중치가 있는 그래프 (aka network)
 * 정점 가중 그래프: 정점에 가중치가 있는 그래프 (aka network)
@@ -35,7 +35,7 @@ Chapter 5. 가중치와 최적화 프로그램
 그래프를 나타내는 방법 중에서 행렬로 나타내는 방법을 소개합니다. 이 책에서는 인접행렬(adjacency matrix) 와 근접행렬(incidence matrix) 를 설명합니다.
 
 * `인접행렬 <https://ko.wikipedia.org/wiki/%EC%9D%B8%EC%A0%91%ED%96%89%EB%A0%AC>`_: 정점 사이의 관계를 타나내는 행렬
-* `근접행렬 <https://en.wikipedia.org/wiki/incidence_matrix>`_: 정점과 변의 관계를 타나내는 행렬 
+* `근접행렬 <https://en.wikipedia.org/wiki/incidence_matrix>`_: 정점과 변의 관계를 타나내는 행렬
 
 .. image:: imgs/chap5_2.png
 	:width: 500px
@@ -45,7 +45,7 @@ Chapter 5. 가중치와 최적화 프로그램
 
 `트리 구조 그래프 <https://en.wikipedia.org/wiki/Tree_structure>`_
 ******************************************************************
-트리 구조는 그래프구조의 하나로 조상이 없는 노드를 root 노드로 두고 그 아래로 자식관계를 가지는 후손 노드들이 펼쳐지는 구조이다. 이를 통해 하나의 정점에서 다른 정점으로 가는 경로가 단 한개만 존재한다. 
+트리 구조는 그래프구조의 하나로 조상이 없는 노드를 root 노드로 두고 그 아래로 자식관계를 가지는 후손 노드들이 펼쳐지는 구조이다. 이를 통해 하나의 정점에서 다른 정점으로 가는 경로가 단 한개만 존재한다.
 
 .. _graph02:
 
@@ -60,15 +60,15 @@ Chapter 5. 가중치와 최적화 프로그램
 탐색 트리 추적 방법
 *******************
 * 깊이 우선 탐색:
-  
+
 .. image:: imgs/chap5.2.1.png
 	:width: 500px
 	:align: center
 	:height: 100px
 	:alt: alternate text
-	      
+
 * 너비 우선 탐색:
-  
+
 .. image:: imgs/chap5.2.2.png
 	:width: 500px
 	:align: center
@@ -90,8 +90,32 @@ Chapter 5. 가중치와 최적화 프로그램
 * 상태 :math:`s` 를 거치는 초기 상태 -> 목표의 최적 경로 이동에 드는 비용의 총합 :math:`f(s) (= g(s)+h(s))`
 
 :math:`\hat{g}(s)` 를 최소화 하도록 노드 선택: 최적 탐색이라고 함 (optimal search). 탐색량이 많은 단점
-      
+
 :math:`\hat{h}(s)` 를 최소화 하도록 노드 탐색: 최선 우선 탐색 (Best-first search). 잘못 된 결과가 나올 수 있는 단점
-      
-      
+
+동적 계획법 (dynamic programming)
+********************************
+역자의 각주 `wiki 동적계획법 <https://ko.wikipedia.org/wiki/동적_계획법>`_ 을 참고하는 것이 이해하기가 더 쉽습니다.
+
+동적 계획법은 모든 경로를 모두 비교하는 방법으로 복잡한 문제를 더 작은 단위의 문제로 나누어 작은 문제의 결과를 메모리를 사용하여 저장함으로써 계산량을 줄이는 기법을 말합니다.
+이 책에서는 시계열 기준 상태변화의 예를 들어서 동적 프로그래밍의 효율성을 설명하고 있습니다.
+
+시간 :math:`t=1,\dots,T` 일 때 :math:`s_t` 라는 상태 패턴이 N 개 존재하면 전체적으로 :math:`t=1`에서 :math:`t=T`까지 가능한 전체 경로 수가 :math:`N^T` 가 됩니다.
+
+.. image:: imgs/chap5.2.3.png
+  :width: 500px
+	:align: center
+	:height: 100px
+	:alt: alternate text
+
+이렇게 모든 경로를 열거해 평가하게 되면 계산량이 :math:`O(N^T)`가 되기 때문에 계산량을 줄이기 위해 문제를 잘게 나누어 각각의 세부 계산 결과를 메모리에 저장하여 최적해를 찾는 방법을 사용하는 것이 좋습니다.
+
+여기서 점수 계산식은 다음과 같이 정의할 수 있습니다.
+
+.. math::
+F_t(S_t)=\max_{s_t-1}[F_{t-1}(s_{t-1})+h_t(s_{t-1},s_t)]
+
+즉 t 시간에서의 최대값은 t-1 시간까지의 최대값에 t-1과 t 사이에서의 최대값만 고려하여 계산하면 됩니다. Bioinformatics 에서는 Needleman-Wunch algorithm이나 Smith-Watermann algorithm 이 대표적인 예가 되겠습니다.
+
+
 .. 문법참조: https://thomas-cokelaer.info/tutorials/sphinx/rest_syntax.html#restructured-text-rest-and-sphinx-cheatsheet
