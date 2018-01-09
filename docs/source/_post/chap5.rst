@@ -100,22 +100,21 @@ Chapter 5. 가중치와 최적화 프로그램
 동적 계획법은 모든 경로를 모두 비교하는 방법으로 복잡한 문제를 더 작은 단위의 문제로 나누어 작은 문제의 결과를 메모리를 사용하여 저장함으로써 계산량을 줄이는 기법을 말합니다.
 이 책에서는 시계열 기준 상태변화의 예를 들어서 동적 프로그래밍의 효율성을 설명하고 있습니다.
 
-시간 :math:`t=1,\dots,T` 일 때 :math:`s_t` 라는 상태 패턴이 N 개 존재하면 전체적으로 :math:`t=1`에서 :math:`t=T`까지 가능한 전체 경로 수가 :math:`N^T` 가 됩니다.
+시간 :math:`t=1,\dots,T` 일 때 :math:`s_t` 라는 상태 패턴이 N 개 존재하면 전체적으로 :math:`t=1` 에서 :math:`t=T` 까지 가능한 전체 경로 수가 :math:`N^T` 가 됩니다.
 
 .. image:: imgs/chap5.2.3.png
-  :width: 500px
+	:width: 500px
 	:align: center
 	:height: 100px
 	:alt: alternate text
 
-이렇게 모든 경로를 열거해 평가하게 되면 계산량이 :math:`O(N^T)`가 되기 때문에 계산량을 줄이기 위해 문제를 잘게 나누어 각각의 세부 계산 결과를 메모리에 저장하여 최적해를 찾는 방법을 사용하는 것이 좋습니다.
+이렇게 모든 경로를 열거해 평가하게 되면 계산량이 :math:`O(N^T)` 가 되기 때문에 계산량을 줄이기 위해 문제를 잘게 나누어 각각의 세부 계산 결과를 메모리에 저장하여 최적해를 찾는 방법을 사용하는 것이 좋습니다.
 
 여기서 점수 계산식은 다음과 같이 정의할 수 있습니다.
 
 .. math::
-F_t(S_t)=\max_{s_t-1}[F_{t-1}(s_{t-1})+h_t(s_{t-1},s_t)]
+	F_t(S_t)=\max_{s_t-1}[F_{t-1}(s_{t-1})+h_t(s_{t-1},s_t)]
 
-즉 t 시간에서의 최대값은 t-1 시간까지의 최대값에 t-1과 t 사이에서의 최대값만 고려하여 계산하면 됩니다. Bioinformatics 에서는 Needleman-Wunch algorithm이나 Smith-Watermann algorithm 이 대표적인 예가 되겠습니다.
-
+즉 :math:`t` 시간에서의 최대값은 :math:`t-1` 시간까지의 최대값에 :math:`t-1` 과 :math:`t` 사이에서의 최대값만 고려하여 계산하면 됩니다. Bioinformatics 쪽에서는 `Needleman-Wunsch algorithm <https://en.wikipedia.org/wiki/Needleman%E2%80%93Wunsch_algorithm>`_ 나 `Smith-Waterman algorithm <https://en.wikipedia.org/wiki/Smith%E2%80%93Waterman_algorithm>`_ 이 대표적인 예가 되겠습니다.
 
 .. 문법참조: https://thomas-cokelaer.info/tutorials/sphinx/rest_syntax.html#restructured-text-rest-and-sphinx-cheatsheet
