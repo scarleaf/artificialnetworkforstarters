@@ -113,8 +113,31 @@ Chapter 5. 가중치와 최적화 프로그램
 여기서 점수 계산식은 다음과 같이 정의할 수 있습니다.
 
 .. math::
-	F_t(S_t)=\max_{s_t-1}[F_{t-1}(s_{t-1})+h_t(s_{t-1},s_t)]
+	F_t(S_t)=\max_{s_{t-1}}[F_{t-1}(s_{t-1})+h_t(s_{t-1},s_t)]
 
 즉 :math:`t` 시간에서의 최대값은 :math:`t-1` 시간까지의 최대값에 :math:`t-1` 과 :math:`t` 사이에서의 최대값만 고려하여 계산하면 됩니다. Bioinformatics 쪽에서는 `Needleman-Wunsch algorithm <https://en.wikipedia.org/wiki/Needleman%E2%80%93Wunsch_algorithm>`_ 나 `Smith-Waterman algorithm <https://en.wikipedia.org/wiki/Smith%E2%80%93Waterman_algorithm>`_ 이 대표적인 예가 되겠습니다.
+
+03 유전 알고리즘
+###############
+
+유전 알고리즘 구조
+*****************
+아래 영상이 전반적인 개념을 이해하는데 도움을 주네요
+
+`Youtube Video <https://www.youtube.com/watch?v=zwYV11a__HQ>`_
+이정도 하고 넘어가면 될 듯 합니다.
+
+04 신경망
+#########
+
+헵의 법칙과 형식 뉴런
+********************
+생명체의 신경세포가 외부 자극을 받을 때 신호의 세기가 일정 기준을 넘으면 다음 신경 세포로 신호를 전달하는 것을 수학적 모델로 삼아서 만든 개념입니다. 이 수학 모델을 맥컬록-피츠 (McCulloch-Pitts) 모델이라고 합니다.
+헵의 법칙은 시냅스의 가소성을 처음 제창한 사람의 이름인 도널드 헵의 이름을 따서 붙은 법칙으로 시냅스의 연결이 상호작용에 의해 강화되고 약해지는 것을 나타냅니다. 이를 신경망에서는 가중치가 변하는 것으로 모델링을 합니다.
+
+신경망
+******
+
+
 
 .. 문법참조: https://thomas-cokelaer.info/tutorials/sphinx/rest_syntax.html#restructured-text-rest-and-sphinx-cheatsheet
