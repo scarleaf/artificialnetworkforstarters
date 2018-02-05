@@ -36,6 +36,8 @@ Authors
 - `Byung-Chul Lee <https://github.com/io2oi>`_
 - `Hyeon-Joo Lee <https://github.com/hyeonlee17>`_
 - `Jong-Hyuk Kim <https://github.com/hubert93>`_
+- `So-Won Hwang <https://github.com/sowonhwang>`_
+- `Sun-Jeong Yun <https://github.com/sunnysjyun>`_
 - `Woong Jeong <https://github.com/scarleaf>`_
 
 Indices and tables
