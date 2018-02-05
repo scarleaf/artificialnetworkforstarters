@@ -94,8 +94,36 @@ Rest1. [쉬어가기] 약인공지능의 발전과 딥러닝 알고리즘
 	:height: 100px
 	:alt: alternate text
 
-	.. image:: imgs/rest_fig11.jpg
-		:width: 400px
-		:align: center
-		:height: 100px
-		:alt: alternate text
+.. image:: imgs/rest_fig11.jpg
+	:width: 400px
+	:align: center
+	:height: 100px
+	:alt: alternate text
+
+.. _06 딥러닝의 유형:
+
+06 딥러닝의 유형
+========================
+
+.. image:: imgs/rest_fig12.png
+	:width: 400px
+	:align: center
+	:height: 100px
+	:alt: alternate text
+
+.. _07 딥러닝 프레임워크:
+
+07 딥러닝의 프레임워크
+========================
+
+.. image:: imgs/rest_fig13.png
+	:width: 400px
+	:align: center
+	:height: 100px
+	:alt: alternate text
+
+.. image:: imgs/rest_fig14.jpg
+	:width: 400px
+	:align: center
+	:height: 100px
+	:alt: alternate text
