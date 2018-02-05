@@ -42,3 +42,60 @@ Rest1. [쉬어가기] 약인공지능의 발전과 딥러닝 알고리즘
 	:align: center
 	:height: 100px
 	:alt: alternate text
+
+.. _03 회귀분석(Regression):
+
+03 회귀분석(Regression)
+========================
+
+.. image:: imgs/rest_fig5.jpg
+	:width: 400px
+	:align: center
+	:height: 100px
+	:alt: alternate text
+
+.. image:: imgs/rest_fig6.png
+	:width: 400px
+	:align: center
+	:height: 100px
+	:alt: alternate text
+
+.. image:: imgs/rest_fig7.png
+	:width: 400px
+	:align: center
+	:height: 100px
+	:alt: alternate text
+
+.. _04 이진 분류(Binary Classification):
+
+04 이진 분류(Binary Classification)
+========================
+
+.. image:: imgs/rest_fig8.jpg
+	:width: 400px
+	:align: center
+	:height: 100px
+	:alt: alternate text
+
+.. _05 딥러닝의 등장:
+
+05 딥러닝의 등장
+========================
+
+.. image:: imgs/rest_fig9.png
+	:width: 400px
+	:align: center
+	:height: 100px
+	:alt: alternate text
+
+.. image:: imgs/rest_fig10.jpg
+	:width: 400px
+	:align: center
+	:height: 100px
+	:alt: alternate text
+
+	.. image:: imgs/rest_fig11.jpg
+		:width: 400px
+		:align: center
+		:height: 100px
+		:alt: alternate text

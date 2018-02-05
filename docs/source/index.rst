@@ -20,7 +20,7 @@ Table of Contents
    _post/chap3.rst
    _post/chap4.rst
    _post/chap5.rst
-   _poas/rest1.rst
+   _post/rest1.rst
    _post/chap6.rst
    _post/chap7.rst
    _post/chap8.rst
