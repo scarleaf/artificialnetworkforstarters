@@ -99,7 +99,7 @@ Rest1. [쉬어가기] 약인공지능의 발전과 딥러닝 알고리즘
 06 딥러닝의 유형
 ========================
 
-.. image:: imgs/rest_fig12.PNG
+.. image:: imgs/rest_fig12.png
 	:width: 400px
 	:align: center
 	:height: 100px
