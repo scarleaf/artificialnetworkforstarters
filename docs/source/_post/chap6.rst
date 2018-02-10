@@ -52,6 +52,7 @@ Chapter 6. 통계 기반 머신러닝 1 - 확률분포와 모델링
 
 .. math::
         f(x)=1/ \sqrt {2 \pi \sig^{2} exp ( - (x- \mu )^2/2 \sig^2)
+        f(x)=\sqrt_{2}
               
               
 손실함수와 경사 하강법
