@@ -111,6 +111,18 @@ Chapter 6. 통계 기반 머신러닝 1 - 확률분포와 모델링
 * 디리클레 분포
 `디리클레 분포(Dirichlet distribution) <https://ko.wikipedia.org/wiki/%EB%94%94%EB%A6%AC%ED%81%B4%EB%A0%88_%EB%B6%84%ED%8F%AC>`_ 는 베타분포를 다변량으로 확장한 것으로 다변량 베타분포라고도 합니다. k >= 2, α는 매개변수, B(α)는 베타함수, Γ는 감마함수 입니다.
 
+.. image:: imgs/디리클레분포_식.png
+        :width: 50px
+        :align: center
+        :height: 50px
+        :alt: alternate text
+        
+.. image:: imgs/분포_그래프.png
+        :width: 50px
+        :align: center
+        :height: 50px
+        :alt: alternate text
+
 
 손실함수와 경사 하강법
 *********************
