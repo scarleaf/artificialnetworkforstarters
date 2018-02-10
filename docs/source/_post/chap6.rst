@@ -81,8 +81,37 @@ Chapter 6. 통계 기반 머신러닝 1 - 확률분포와 모델링
 * 지수분포
 `지수분포 <https://ko.wikipedia.org/wiki/%EC%A7%80%EC%88%98%EB%B6%84%ED%8F%AC>`_ 는 감마분포의 모양 매개변수 k=1 일 때 사건이 일어나는 시간 간격의 확률분포를 의미합니다. 푸아송 분포와도 깊은 연관이 있습니다. 
 
+.. image:: imgs/지수분포_식.png
+        :width: 50px
+        :align: center
+        :height: 50px
+        :alt: alternate text
+        
+.. image:: imgs/지수분포_그래프.png
+        :width: 50px
+        :align: center
+        :height: 50px
+        :alt: alternate text
 
-              
+* 베타분포
+`베타분포 <https://ko.wikipedia.org/wiki/%EB%B2%A0%ED%83%80_%EB%B6%84%ED%8F%AC>`_ 는 2개의 변수를 갖는 특수 함수인 베타함수를 이용한 분포입니다. 매개변수 a, b를 바꾸면 다양한 분포를 나타낼 수 있으므로 베이즈 통계학에서는 사전분포 모델로 이용할 때가 많습니다.
+
+.. image:: imgs/베타분포_식.png
+        :width: 50px
+        :align: center
+        :height: 50px
+        :alt: alternate text
+        
+.. image:: imgs/베타분포_그래프.png
+        :width: 50px
+        :align: center
+        :height: 50px
+        :alt: alternate text
+        
+* 디리클레 분포
+`디리클레 분포(Dirichlet distribution) <https://ko.wikipedia.org/wiki/%EB%94%94%EB%A6%AC%ED%81%B4%EB%A0%88_%EB%B6%84%ED%8F%AC>`_ 는 베타분포를 다변량으로 확장한 것으로 다변량 베타분포라고도 합니다. k >= 2, α는 매개변수, B(α)는 베타함수, Γ는 감마함수 입니다.
+
+
 손실함수와 경사 하강법
 *********************
 
