@@ -28,7 +28,7 @@ Chapter 6. 통계 기반 머신러닝 1 - 확률분포와 모델링
 
 * 자율학습(Unsupervised Learning) : 입력 데이터의 정답을 모르는 상태에서 사용하는 것으로 클러스터 분석, 차원압축, 밀도추정 등이 해당합니다.
 
-.. image:: imgs/머신러닝_types.png;
+.. image:: imgs/머신러닝_types.png
         :width: 300px;
         :align: center; 
         :height: 300px;
