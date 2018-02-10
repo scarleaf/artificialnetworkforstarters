@@ -34,6 +34,7 @@ Chapter 6. 통계 기반 머신러닝 1 - 확률분포와 모델링
         :height: 300px
         :alt: alternate text
 
+
 기저함수
 ********
 
@@ -62,6 +63,7 @@ Chapter 6. 통계 기반 머신러닝 1 - 확률분포와 모델링
         :height: 50px
         :alt: alternate text
 
+
 * 감마분포
 
 `감마분포 <https://ko.wikipedia.org/wiki/%EA%B0%90%EB%A7%88_%EB%B6%84%ED%8F%AC>`_ 는 특정 수의 사건이 일어날 때까지 걸리는 시간에 관한 연속 확률분포 입니다. 모양 매개변수가 k이고 크기 매개변수가 θ일 때, 평균은 kθ, 분산은 kθ^2입니다. k=1 일 때 지수분포, k가 반정수((2n-1)/2)고 θ=2 일 때 카이제곱 분포라고 합니다.
@@ -77,6 +79,7 @@ Chapter 6. 통계 기반 머신러닝 1 - 확률분포와 모델링
         :align: center
         :height: 50px
         :alt: alternate text
+
 
 * 지수분포
 
@@ -94,6 +97,7 @@ Chapter 6. 통계 기반 머신러닝 1 - 확률분포와 모델링
         :height: 50px
         :alt: alternate text
 
+
 * 베타분포
 
 `베타분포 <https://ko.wikipedia.org/wiki/%EB%B2%A0%ED%83%80_%EB%B6%84%ED%8F%AC>`_ 는 2개의 변수를 갖는 특수 함수인 베타함수를 이용한 분포입니다. 매개변수 a, b를 바꾸면 다양한 분포를 나타낼 수 있으므로 베이즈 통계학에서는 사전분포 모델로 이용할 때가 많습니다.
@@ -109,6 +113,7 @@ Chapter 6. 통계 기반 머신러닝 1 - 확률분포와 모델링
         :align: center
         :height: 50px
         :alt: alternate text
+        
         
 * 디리클레 분포
 
@@ -126,7 +131,8 @@ Chapter 6. 통계 기반 머신러닝 1 - 확률분포와 모델링
         :height: 50px
         :alt: alternate text
 
-1. 이산 확률분포
+
+2. 이산 확률분포
 
 * 이항분포
 
@@ -144,6 +150,7 @@ Chapter 6. 통계 기반 머신러닝 1 - 확률분포와 모델링
         :height: 50px
         :alt: alternate text
 
+
 * 음이항분포
 
 `음이항분포 <https://en.wikipedia.org/wiki/Negative_binomial_distribution>`_ 란 r번 성공하는데 필요한 시행횟수 k의 분포를 의미합니다. 생명과학 분야에서 많이 사용합니다.
@@ -159,6 +166,7 @@ Chapter 6. 통계 기반 머신러닝 1 - 확률분포와 모델링
         :align: center
         :height: 50px
         :alt: alternate text
+
 
 * 푸아송분포
 
@@ -176,6 +184,54 @@ Chapter 6. 통계 기반 머신러닝 1 - 확률분포와 모델링
         :height: 50px
         :alt: alternate text
 
+
+* 카이제곱분포
+`카이제곱분포 <https://ko.wikipedia.org/wiki/%EC%B9%B4%EC%9D%B4%EC%A0%9C%EA%B3%B1_%EB%B6%84%ED%8F%AC>`_ 란 집단을 몇 가지로 나눴을 때 크기가 작은 집단에 보편성이 있는지 확인할 수 있는 분포입니다. 통계적 추론에서는 카이제곱 검정(독립성 검정)으로 자주 이용하며, 임상시험이나 사회과학 설문조사 등에 자주 사용합니다.
+
+.. image:: imgs/카이제곱분포_식.png
+        :width: 50px
+        :align: center
+        :height: 50px
+        :alt: alternate text
+        
+.. image:: imgs/카이제곱분포_그래프.png
+        :width: 50px
+        :align: center
+        :height: 50px
+        :alt: alternate text
+
+
+* 초기하분포
+`초기하분포 <https://en.wikipedia.org/wiki/Hypergeometric_distribution>`_ 란 반복하지 않는 시도에서 사건이 발생할 확률분포를 의미합니다.
+
+.. image:: imgs/초기하분포_식.png
+        :width: 50px
+        :align: center
+        :height: 50px
+        :alt: alternate text
+        
+.. image:: imgs/초기하분포_그래프.png
+        :width: 50px
+        :align: center
+        :height: 50px
+        :alt: alternate text
+      
+      
+* 로지스틱분포
+`로지스틱분포 <https://en.wikipedia.org/wiki/Logistic_distribution>`_ 란 확률분포의 확률변수가 특정 값보다 작거나 같은 확률을 나타내는 누적분포 함수가 로지스틱 함수인 분포를 의미합니다. 정규분포와 비슷하지만 그래프의 아래가 길어 평균에서 멀어지더라도 정규분포처럼 곡선이 내려가지 않습니다.
+
+.. image:: imgs/로지스틱분포_식.png
+        :width: 50px
+        :align: center
+        :height: 50px
+        :alt: alternate text
+        
+.. image:: imgs/로지스틱분포_그래프.png
+        :width: 50px
+        :align: center
+        :height: 50px
+        :alt: alternate text
+        
 
 
 손실함수와 경사 하강법
