@@ -50,9 +50,17 @@ Chapter 6. 통계 기반 머신러닝 1 - 확률분포와 모델링
 
 `정규분포 <https://ko.wikipedia.org/wiki/%EC%A0%95%EA%B7%9C%EB%B6%84%ED%8F%AC>`_ 는 가장 많이 사용하는 분포 개념으로 가우스 분포(Gaussian distribution)라고도 합니다. 실험의 측정 오차나 사회 현상 등 자연계의 현상은 정규분포를 따르는 경향이 있습니다.
 
-.. math::
-        f(x)=1/ \sqrt {2 \pi \sig^{2} exp ( - (x- \mu )^2/2 \sig^2)
-        f(x)=\sqrt_{2}
+.. image:: imgs/정규분포_식.png
+        :width: 400px
+        :align: center
+        :height: 400px
+        :alt: alternate text
+        
+.. image:: imgs/정규분포_그래프.png
+        :width: 400px
+        :align: center
+        :height: 400px
+        :alt: alternate text
               
               
 손실함수와 경사 하강법
