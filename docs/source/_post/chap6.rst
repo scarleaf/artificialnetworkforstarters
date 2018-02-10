@@ -29,9 +29,9 @@ Chapter 6. 통계 기반 머신러닝 1 - 확률분포와 모델링
 * 자율학습(Unsupervised Learning) : 입력 데이터의 정답을 모르는 상태에서 사용하는 것으로 클러스터 분석, 차원압축, 밀도추정 등이 해당합니다.
 
 .. image:: imgs/머신러닝_types.png
-        :width: 400px
+        :width: 300px
         :align: center
-        :height: 400px
+        :height: 300px
         :alt: alternate text
 
 기저함수
@@ -51,15 +51,15 @@ Chapter 6. 통계 기반 머신러닝 1 - 확률분포와 모델링
 `정규분포 <https://ko.wikipedia.org/wiki/%EC%A0%95%EA%B7%9C%EB%B6%84%ED%8F%AC>`_ 는 가장 많이 사용하는 분포 개념으로 가우스 분포(Gaussian distribution)라고도 합니다. 실험의 측정 오차나 사회 현상 등 자연계의 현상은 정규분포를 따르는 경향이 있습니다.
 
 .. image:: imgs/정규분포_식.png
-        :width: 400px
+        :width: 200px
         :align: center
-        :height: 400px
+        :height: 200px
         :alt: alternate text
         
 .. image:: imgs/정규분포_그래프.png
-        :width: 400px
+        :width: 100px
         :align: center
-        :height: 400px
+        :height: 100px
         :alt: alternate text
               
               
