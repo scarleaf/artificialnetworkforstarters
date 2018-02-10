@@ -61,8 +61,27 @@ Chapter 6. 통계 기반 머신러닝 1 - 확률분포와 모델링
         :align: center
         :height: 50px
         :alt: alternate text
+
+* 감마분포
+
+`감마분포 <https://ko.wikipedia.org/wiki/%EA%B0%90%EB%A7%88_%EB%B6%84%ED%8F%AC>`_ 는 특정 수의 사건이 일어날 때까지 걸리는 시간에 관한 연속 확률분포 입니다. 모양 매개변수가 k이고 크기 매개변수가 θ일 때, 평균은 kθ, 분산은 kθ^2입니다. k=1 일 때 지수분포, k가 반정수((2n-1)/2)고 θ=2 일 때 카이제곱 분포라고 합니다.
+
+.. image:: imgs/감마분포_식.png
+        :width: 50px
+        :align: center
+        :height: 50px
+        :alt: alternate text
+        
+.. image:: imgs/감마분포_그래프.png
+        :width: 50px
+        :align: center
+        :height: 50px
+        :alt: alternate text
+
+
+
+
               
-              
 손실함수와 경사 하강법
 *********************
 
