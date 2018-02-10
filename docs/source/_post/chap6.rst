@@ -14,8 +14,6 @@ Chapter 6. 통계 기반 머신러닝 1 - 확률분포와 모델링
 
 `확률분포 <https://ko.wikipedia.org/wiki/%ED%99%95%EB%A5%A0%EB%B6%84%ED%8F%AC>`_란 확률변수가 특정한 값을 가질 확률을 나타내는 함수를 의미합니다.
 
-`유향 비순회 그래프 (directed acyclic graph) <https://en.wikipedia.org/wiki/Directed_acyclic_graph#Definitions>`_:
-
 * 이산 확률분포 : 이산 확률변수가 가지는 확률분포를 의미합니다. 이산균등분포, 푸아송분포, 베르누이분포, 기하분포,초기하분포,이항분포 등이 있습니다.
 
 * 연속확률분포 : 확률 밀도 함수를 이용해 표현할 수 있는 확률분포를 의미합니다. 정규분포, 연속균등분포, 카이제곱분포 등이 있습니다.
