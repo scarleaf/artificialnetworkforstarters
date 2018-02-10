@@ -78,7 +78,8 @@ Chapter 6. 통계 기반 머신러닝 1 - 확률분포와 모델링
         :height: 50px
         :alt: alternate text
 
-
+* 지수분포
+`지수분포 <https://ko.wikipedia.org/wiki/%EC%A7%80%EC%88%98%EB%B6%84%ED%8F%AC>`_ 는 감마분포의 모양 매개변수 k=1 일 때 사건이 일어나는 시간 간격의 확률분포를 의미합니다. 푸아송 분포와도 깊은 연관이 있습니다. 
 
 
               
