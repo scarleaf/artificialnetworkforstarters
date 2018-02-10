@@ -79,6 +79,7 @@ Chapter 6. 통계 기반 머신러닝 1 - 확률분포와 모델링
         :alt: alternate text
 
 * 지수분포
+
 `지수분포 <https://ko.wikipedia.org/wiki/%EC%A7%80%EC%88%98%EB%B6%84%ED%8F%AC>`_ 는 감마분포의 모양 매개변수 k=1 일 때 사건이 일어나는 시간 간격의 확률분포를 의미합니다. 푸아송 분포와도 깊은 연관이 있습니다. 
 
 .. image:: imgs/지수분포_식.png
@@ -94,6 +95,7 @@ Chapter 6. 통계 기반 머신러닝 1 - 확률분포와 모델링
         :alt: alternate text
 
 * 베타분포
+
 `베타분포 <https://ko.wikipedia.org/wiki/%EB%B2%A0%ED%83%80_%EB%B6%84%ED%8F%AC>`_ 는 2개의 변수를 갖는 특수 함수인 베타함수를 이용한 분포입니다. 매개변수 a, b를 바꾸면 다양한 분포를 나타낼 수 있으므로 베이즈 통계학에서는 사전분포 모델로 이용할 때가 많습니다.
 
 .. image:: imgs/베타분포_식.png
@@ -109,7 +111,8 @@ Chapter 6. 통계 기반 머신러닝 1 - 확률분포와 모델링
         :alt: alternate text
         
 * 디리클레 분포
-`디리클레 분포(Dirichlet distribution) <https://ko.wikipedia.org/wiki/%EB%94%94%EB%A6%AC%ED%81%B4%EB%A0%88_%EB%B6%84%ED%8F%AC>`_ 는 베타분포를 다변량으로 확장한 것으로 다변량 베타분포라고도 합니다. k >= 2, α는 매개변수, B(α)는 베타함수, Γ는 감마함수 입니다.
+
+`디리클레 분포(Dirichlet distribution) <https://ko.wikipedia.org/wiki/%EB%94%94%EB%A6%AC%ED%81%B4%EB%A0%88_%EB%B6%84%ED%8F%AC>`_ 는 베타분포를 다변량으로 확장한 것으로 다변량 베타분포라고도 합니다. 연속함수지만 2차원 평면에서는 연속함수로 나타낼 수 없습니다. 확률자체를 확률분포로 두는 분포로 자연어 처리 등에 많이 사용합니다.
 
 .. image:: imgs/디리클레분포_식.png
         :width: 50px
@@ -117,11 +120,62 @@ Chapter 6. 통계 기반 머신러닝 1 - 확률분포와 모델링
         :height: 50px
         :alt: alternate text
         
-.. image:: imgs/분포_그래프.png
+.. image:: imgs/디리클레분포_그래프.png
         :width: 50px
         :align: center
         :height: 50px
         :alt: alternate text
+
+1. 이산 확률분포
+
+* 이항분포
+
+`이항분포 <https://ko.wikipedia.org/wiki/%EC%9D%B4%ED%95%AD_%EB%B6%84%ED%8F%AC>`_ 란 베르누이 시행(두 가지 종류 중 어느 하나가 나오는가와 같은 실험)을 여러 번 시행했을 때 확률분포를 의미합니다. 정규분포나 포아송분포와 비슷합니다.
+
+.. image:: imgs/이항분포_식.png
+        :width: 50px
+        :align: center
+        :height: 50px
+        :alt: alternate text
+        
+.. image:: imgs/이항분포_그래프.png
+        :width: 50px
+        :align: center
+        :height: 50px
+        :alt: alternate text
+
+* 음이항분포
+
+`음이항분포 <https://en.wikipedia.org/wiki/Negative_binomial_distribution>`_ 란 r번 성공하는데 필요한 시행횟수 k의 분포를 의미합니다. 생명과학 분야에서 많이 사용합니다.
+
+.. image:: imgs/음이항분포_식.png
+        :width: 50px
+        :align: center
+        :height: 50px
+        :alt: alternate text
+        
+.. image:: imgs/음이항분포_그래프.png
+        :width: 50px
+        :align: center
+        :height: 50px
+        :alt: alternate text
+
+* 푸아송분포
+
+`푸아송분포 <https://ko.wikipedia.org/wiki/%ED%91%B8%EC%95%84%EC%86%A1_%EB%B6%84%ED%8F%AC>`_ 란 일정 시간 간격에 걸쳐 평균 λ번 일어나는 현상이 k번 발생할 확률분포를 의미합니다. 지수분포가 사건이 일어난 후 다시 발생할 때까지의 시간 간격에 대한 확률밀도를 나타내는 반면, 푸아송분포는 단위 시간에 사건이 일어날 확률을 나타내므로 이 둘은 같은 사건의 발생 확률을 다른 측면에서 본다고 이해할 수 있습니다.
+
+.. image:: imgs/푸아송분포_식.png
+        :width: 50px
+        :align: center
+        :height: 50px
+        :alt: alternate text
+        
+.. image:: imgs/푸아송분포_그래프.png
+        :width: 50px
+        :align: center
+        :height: 50px
+        :alt: alternate text
+
 
 
 손실함수와 경사 하강법
