@@ -233,6 +233,14 @@ Chapter 6. 통계 기반 머신러닝 1 - 확률분포와 모델링
         :alt: alternate text
         
 
+* 확률분포 정리
+
+.. image:: imgs/분포정리_그림.png
+        :width: 500px
+        :align: center
+        :height: 500px
+        :alt: alternate text
+        
 
 손실함수와 경사 하강법
 *********************
