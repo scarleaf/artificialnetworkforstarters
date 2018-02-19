@@ -266,7 +266,7 @@ Chapter 6. 통계 기반 머신러닝 1 - 확률분포와 모델링
 **********
 
 * 베이즈정리
-`베이즈정리 <https://ko.wikipedia.org/wiki/%EB%B2%A0%EC%9D%B4%EC%A6%88_%EC%A0%95%EB%A6%AC>`_는 두 종류의 조건부 확률 사이의 관계를 정의합니다.
+`베이즈정리 <https://ko.wikipedia.org/wiki/%EB%B2%A0%EC%9D%B4%EC%A6%88_%EC%A0%95%EB%A6%AC>`_ 는 두 종류의 조건부 확률 사이의 관계를 정의합니다.
 일반적인 베이즈정리 식입니다. 사후확률(Posterior probability)은 사전확률(Prior probability)과 우도(likelihood)의 곱과 같습니다.
 
 .. image:: imgs/베이즈정리_식.png
@@ -280,10 +280,10 @@ Chapter 6. 통계 기반 머신러닝 1 - 확률분포와 모델링
 ***************************
 
 * 최대가능도 방법
-관측데이터에서 의미있는 값을 구할 때 손실함수를 생성한 뒤 `가능도함수 <https://en.wikipedia.org/wiki/Likelihood_function>`_를 생성할 수 있습니다. 가능도함수가 최대가 되는 θ값을 정했을 때 θ는 최대가능도 추정량(Maximum Likelihood Estimation, MLE)라고 합니다. 엔트로피가 높은 상태, 즉 노이즈가 가장 균형있게 흩어져 있는 상태를 최대가능도 추정량으로 정해서 의미있는 데이터를 구할 수도 있습니다. 복잡한 가능도함수에서는 최대가능도 추정량을 직접 구할 수 없을 때가 많으며 보통 반복 계산으로 구하는 방법을 선택합니다.
+관측데이터에서 의미있는 값을 구할 때 손실함수를 생성한 뒤 `가능도함수 <https://en.wikipedia.org/wiki/Likelihood_function>`_ 를 생성할 수 있습니다. 가능도함수가 최대가 되는 θ값을 정했을 때 θ는 최대가능도 추정량(Maximum Likelihood Estimation, MLE)라고 합니다. 엔트로피가 높은 상태, 즉 노이즈가 가장 균형있게 흩어져 있는 상태를 최대가능도 추정량으로 정해서 의미있는 데이터를 구할 수도 있습니다. 복잡한 가능도함수에서는 최대가능도 추정량을 직접 구할 수 없을 때가 많으며 보통 반복 계산으로 구하는 방법을 선택합니다.
 
 * EM 알고리즘
-`EM 알고리즘 <https://ko.wikipedia.org/wiki/%EA%B8%B0%EB%8C%93%EA%B0%92_%EC%B5%9C%EB%8C%80%ED%99%94_%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98>`_은 숨겨진 변수를 포함하는 모델에 사용하는 가상 데이터 전체의 가능도함수를 바탕으로 불완전한 데이터에서 최대가능도 추정량을 구하는 방법을 의미합니다. Expectation 단계와 maximization 단계로 구성됩니다.
+`EM 알고리즘 <https://ko.wikipedia.org/wiki/%EA%B8%B0%EB%8C%93%EA%B0%92_%EC%B5%9C%EB%8C%80%ED%99%94_%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98>`_ 은 숨겨진 변수를 포함하는 모델에 사용하는 가상 데이터 전체의 가능도함수를 바탕으로 불완전한 데이터에서 최대가능도 추정량을 구하는 방법을 의미합니다. Expectation 단계와 maximization 단계로 구성됩니다.
 
 1. E (Expectation) Step
  아래쪽 경계를 결정하기 위한 θ에 의존하는 볼록함수 Q를 결정하는 단계.
@@ -312,7 +312,7 @@ p(Y|X) = p(X|Y)p(Y) / p(X)
 
 
 1. 베이즈 추정량
- 사후분포의 평균제곱오차를 최소화하는 값을 `베이즈 추정 <https://ko.wikipedia.org/wiki/%EB%B2%A0%EC%9D%B4%EC%A6%88_%EC%B6%94%EC%A0%95%EB%9F%89>`_이라고 합니다.
+ 사후분포의 평균제곱오차를 최소화하는 값을 `베이즈 추정 <https://ko.wikipedia.org/wiki/%EB%B2%A0%EC%9D%B4%EC%A6%88_%EC%B6%94%EC%A0%95%EB%9F%89>`_ 이라고 합니다.
  
 2. 사후 메디안 추정량
  사후분포의 평균 절대 오차를 최소화하는 값으로 사후분포의 중간값입니다.
