@@ -291,7 +291,7 @@ Chapter 6. 통계 기반 머신러닝 1 - 확률분포와 모델링
         :align: center
         :height: 500px
         :alt: alternate text
-        
+
 
 * 베이즈정리 예제
 
