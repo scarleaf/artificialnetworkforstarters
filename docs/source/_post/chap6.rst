@@ -286,6 +286,12 @@ Chapter 6. 통계 기반 머신러닝 1 - 확률분포와 모델링
 3. 사후확률 (Posterior Probability)
  사전확률과 우도를 통해서 알게되는 조건부 확률. P(A|B)
 
+.. image:: imgs/베이즈정리_식e.png
+        :width: 500px
+        :align: center
+        :height: 500px
+        :alt: alternate text
+        
 
 * 베이즈정리 예제
 
