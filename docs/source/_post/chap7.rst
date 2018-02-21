@@ -36,9 +36,13 @@ Chapter 7. 통계 기반 머신러닝 2 - 자율 학습과 지도 학습
 | 이를 통해 수 백만개의 데이터를 직접 확인하지 않고도 클러스터의 대표값만 확인하여 전체 데이터의 특징을 확인할 수 있습니다.
 
 | 클러스터 분석의 대표적인 방법은 K-means알고리즘이 있습니다.
+| [k그룹 설정] -> [무작위 할당] -> [각 점에서 무작위로]
 
-|
-
+.. image:: imgs/Kmeans_animation.gif
+        :width: 500px
+        :align: center
+        :height: 500px
+        :alt: alternate text
 
 주성분 분석
 ------------
