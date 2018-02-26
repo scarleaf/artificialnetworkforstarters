@@ -432,10 +432,12 @@ N가지 종류의 데이터 x와 추론 대상 매개변수 i가 있는 모집�
 * 뷔퐁의 바늘 (L'aiguille de Buffon)
 `뷔퐁의 바늘 <https://ko.wikipedia.org/wiki/%EB%B7%94%ED%90%81%EC%9D%98_%EB%B0%94%EB%8A%98>`_ 에 대한 설명은 `다음 페이지 <http://j1w2k3.tistory.com/756>`_ 에서 쉽게 설명하고 있습니다. 또한 `다음 페이지 <https://www.geogebra.org/m/j2fYwDR8>`_ 에서 직접 시행해 볼 수 있습니다.
 
+
 몬테카를로 방법
 **************
 
 몬테카를로 방법은 난수를 이용하여 함수의 값을 확률적으로 계산하는 알고리즘으로 수학이나 물리학에서 자주 사용됩니다. 스타니스와프 울람이 모나코의 유명한 도박의 도시 몬테카를로의 이름을 본 따 명명했습니다.
+
 
 .. image:: imgs/몬테카를로_사진.png
         :width: 500px
@@ -444,7 +446,8 @@ N가지 종류의 데이터 x와 추론 대상 매개변수 i가 있는 모집�
         :alt: alternate text
 
 
-* 마르코프 연쇄(Markov Chain)
+* 마르코프 연쇄(Markov Chain) 
+
 
 .. image:: imgs/마르코프체인_그림.png
         :width: 500px
