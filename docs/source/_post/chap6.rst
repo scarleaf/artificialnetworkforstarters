@@ -448,3 +448,8 @@ N가지 종류의 데이터 x와 추론 대상 매개변수 i가 있는 모집�
 
 04 은닉 마르코프 모델과 베이즈 네트워크
 #####################################
+
+베이즈 네트워크
+**************
+
+`베이즈 네트워크 <https://ko.wikipedia.org/wiki/%EB%B2%A0%EC%9D%B4%EC%A6%88_%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC>`_ 는 acyclic and directed graph와 a set of nodes, a set of link를 통해 random variable을 conditionally independent하게 표현하는 graphical notation입니다.
