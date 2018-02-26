@@ -446,7 +446,6 @@ N가지 종류의 데이터 x와 추론 대상 매개변수 i가 있는 모집�
 
 * 마르코프 연쇄(Markov Chain)
 
-
 .. image:: imgs/마르코프체인_그림.jpg
         :width: 500px
         :align: center
@@ -467,8 +466,17 @@ N가지 종류의 데이터 x와 추론 대상 매개변수 i가 있는 모집�
 
 * Markov Chain Monte Carlo(MCMC)
  * Given π(Z)...
- * Find an efficient transition rule to reach the stationary distribution
- 
+ * Find prescribtion for an efficient transition rule to reach the stationary distribution
+ * How to? 우리가 알고있는 π(Z)를 잘 표현할 수 있는 transition matrix를 만들어서 sampling을 반복적으로 진행합니다.
+ * MaryCalls, Alarm이 Evidence node라고 가정할 때, 나머지 node들에 random 값을 assign해야합니다. 이 때 상태 **Z** t에서 MCMC로 계산된 transition rule을 사용하여 상태 **Z** t+1로 변화시켜보고 각 노드들의 assign 된 값을 확인합니다. 결국 가장 많이 나오는 값(most likely value)을 알지 못하던 latent variable에 assign 할 수 있습니다.
+
+
+.. image:: imgs/MCMC_그림.jpg
+        :width: 500px
+        :align: center
+        :height: 500px
+        :alt: alternate text
+
 
 04 은닉 마르코프 모델과 베이즈 네트워크
 #####################################
