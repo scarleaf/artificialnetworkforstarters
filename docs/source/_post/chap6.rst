@@ -444,12 +444,10 @@ N가지 종류의 데이터 x와 추론 대상 매개변수 i가 있는 모집�
         :align: center
         :height: 500px
         :alt: alternate text
+        
 
-.. image:: imgs/마르코프체인_그림.png
-        :width: 500px
-        :align: center
-        :height: 500px
-        :alt: alternate text
+* 마르코프 연쇄(Markov Chain) 
+
 
  * **Z** t로부터 **Z** t+1로 transition 진행은 transition matrix **T** i,j에 의해 일어납니다.
  
@@ -462,7 +460,13 @@ N가지 종류의 데이터 x와 추론 대상 매개변수 i가 있는 모집�
  * Markov chain의 특수한 형태인 Stationary Distribution 메트로폴리스-헤이스팅스 알고리즘을 작동하도록 만드는 핵심조건 입니다.
  
  * Stationary Distribution은 π(모든 state마다 정의되는 확률분포 값)가 t에 따라 더이상 변화하지 않는 상태입니다. (πT = π)
- 
+
+.. image:: imgs/마르코프체인_그림.png
+        :width: 500px
+        :align: center
+        :height: 500px
+        :alt: alternate text
+
  
 * Traditional Markov Chain Analysis
 
