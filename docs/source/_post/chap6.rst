@@ -448,13 +448,11 @@ N가지 종류의 데이터 x와 추론 대상 매개변수 i가 있는 모집�
 
 * 마르코프 연쇄(Markov Chain) 
 
-
 .. image:: imgs/마르코프체인_그림.png
         :width: 500px
         :align: center
         :height: 500px
         :alt: alternate text
-
 
  * **Z** t로부터 **Z** t+1로 transition 진행은 transition matrix **T** i,j에 의해 일어납니다.
  
