@@ -443,6 +443,18 @@ N가지 종류의 데이터 x와 추론 대상 매개변수 i가 있는 모집�
         :height: 500px
         :alt: alternate text
 
+* 마르코프 연쇄(Markov Chain)
+
+.. image:: imgs/마르코프체인_그림.jpg
+        :width: 500px
+        :align: center
+        :height: 500px
+        :alt: alternate text
+
+
+ * **Z** t로부터 **Z** t+1로 transition 진행은 transition matrix **T** i,j에 의해 일어납니다.
+ * 각 node인 Z는 각자 probability distribution을 가지고 있습니다. (Stochastic observation의 경우 **Z** t의 확률형태로 표현)
+
 
 
 
@@ -473,17 +485,21 @@ N가지 종류의 데이터 x와 추론 대상 매개변수 i가 있는 모집�
  * Decoding question
  
   * Given π, a, b, X...
-  * Find *argmax*z P(Z|X, M, π, a, b) : 가장 가능성이 높은(최적의) Z(latent state)는 무엇입니까?
+  * Find **argmax** z P(Z|X, M, π, a, b) : 가장 가능성이 높은(최적의) Z(latent state)는 무엇입니까?
   * 이미 π, a, b가 주어진 상황에서 Z를 구한다는 점에서 'supervisez learning'과 유사합니다.
   * 모델의 최적(최대확률을 가진) 상태를 구하는 Viterbi 알고리즘이 있습니다.
 
  * Learning question
  
   * Given X...
-  * Find *argmax*π,a,b P(X|M, π, a, b) : X(observation)만 주어진 상황에서 HMM의 underlying parameters(π, a, b)는 무엇이 있습니까?
+  * Find **argmax** π,a,b P(X|M, π, a, b) : X(observation)만 주어진 상황에서 HMM의 underlying parameters(π, a, b)는 무엇이 있습니까?
   * π, a, b가 알려지지 않은 상황에서 이를 추정한다는 점에서 'unsupervised learning'과 유사합니다.
-  * Baum-Welch 알고리즘이 있습니다.
+  * Baum-Welch 알고리즘(EM algorithm for HMM, Forward-Backward algorithm)이 있습니다.
   
+   * Optimized π, a, b (예측값)을 구합니다. 이 때 EM 알고리즘(Expectation-Maximization)을 사용합니다.
+   * X, Optimized π, a, b로부터 가장 가능성이 높은(최적의) Z를 구합니다. (Decoding)
+   
+ 
   
 베이즈 네트워크
 **************
