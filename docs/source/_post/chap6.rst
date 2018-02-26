@@ -453,7 +453,7 @@ N가지 종류의 데이터 x와 추론 대상 매개변수 i가 있는 모집�
  
  * 각 node(Z)는 각각의 probability distribution을 가지고 있습니다. (Stochastic observation의 경우 **Z** t의 확률형태로 표현)
  
- * P(**Z** t+1)은 P(**Z** t)와 P(**Z** t+1|**Z** t)로 구할 수 있습니다.
+ * P(**Z** t+1)은 P(**Z** t)와 P(**Z** t+1| **Z** t)로 구할 수 있습니다.
  
  * 아주 많은 chain으로 상태전이가 계속될 때 반복 계산하여 P(**Z** t+1)을 계산할 수 있습니다.
  
