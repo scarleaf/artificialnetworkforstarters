@@ -437,8 +437,8 @@ N가지 종류의 데이터 x와 추론 대상 매개변수 i가 있는 모집�
 
 몬테카를로 방법은 난수를 이용하여 함수의 값을 확률적으로 계산하는 알고리즘으로 수학이나 물리학에서 자주 사용됩니다. 스타니스와프 울람이 모나코의 유명한 도박의 도시 몬테카를로의 이름을 본 따 명명했습니다.
 
-.. image:: imgs/몬테카를로_사진.png
-        :width: 500px
+.. image:: imgs/몬테카를로_사진.jpg
+        :width: 500px
         :align: center
         :height: 500px
         :alt: alternate text
@@ -449,6 +449,38 @@ N가지 종류의 데이터 x와 추론 대상 매개변수 i가 있는 모집�
 04 은닉 마르코프 모델과 베이즈 네트워크
 #####################################
 
+
+은닉 마르코프 모델
+*****************
+
+* 은닉 마르코프 모델 (HMM, Hidden Markov Model, Dynamic Clustering)
+
+ * Indepentent한 data(latent variables)들로부터 시간 경과에 따라 앞/뒤 상태에 영향을 주는 모델을 의미합니다. Latent random variable인 z1은 t1에서 x1이 관찰됩니다. 또한 z1은 이후 latent random variable인 z2에 영향을 미칩니다. 여기에서 x1은 P(x1|z1)으로 표현할 수 있습니다.
+ 
+.. image:: imgs/HMM_그림.png
+        :width: 500px
+        :align: center
+        :height: 500px
+        :alt: alternate text
+
+* HMM의 main questions
+
+ * Evaluation question
+ 
+  * Given π, a, b, X...
+  * Find P(X|M, π, a, b) : Trained model M에서 X 가능성은 어느 정도입니까?
+ 
+ * Decoding question
+ 
+  * Given π, a, b, X...
+  * Find *argmax*z P(Z|X, M, π, a, b) : 가장 가능성이 높은 Z(latent state)의 순서는 무엇입니까?
+  * 이미 π, a, b가 주어진 상황에서 Z를 구한다는 점에서 'supervisez learning'과 유사합니다.
+
+ * Learning question
+ 
+  * Given X...
+  * Find *argmax*π,a,b P(X|M, π, a, b) : X(observation)만 주어진 상황에서 HMM의 underlying parameters(π, a, b)는 무엇이 있습니까?
+  * π, a, b가 알려지지 않은 상황에서 이를 추정한다는 점에서 'unsupervised learning'과 유사합니다.
 베이즈 네트워크
 **************
 
