@@ -445,6 +445,7 @@ N가지 종류의 데이터 x와 추론 대상 매개변수 i가 있는 모집�
 
 * 마르코프 연쇄(Markov Chain)
 
+
 .. image:: imgs/마르코프체인_그림.jpg
         :width: 500px
         :align: center
@@ -456,7 +457,7 @@ N가지 종류의 데이터 x와 추론 대상 매개변수 i가 있는 모집�
  * 각 node인 Z는 각자 probability distribution을 가지고 있습니다. (Stochastic observation의 경우 **Z** t의 확률형태로 표현)
  * P(**Z** t+1)은 P(**Z** t)와 P(**Z** t+1|**Z** t)로 구할 수 있습니다.
  * 아주 많은 chain으로 상태전이가 계속될 때 반복 계산하여 P(**Z** t+1)을 계산할 수 있습니다.
- 
+ * Markov chain의 특수한 형태인 Stationary Distribution 메트로폴리스-헤이스팅스 알고리즘을 작동하도록 만드는 중요한 전제조건 입니다.
  
 
 04 은닉 마르코프 모델과 베이즈 네트워크
@@ -497,8 +498,8 @@ N가지 종류의 데이터 x와 추론 대상 매개변수 i가 있는 모집�
   * π, a, b가 알려지지 않은 상황에서 이를 추정한다는 점에서 'unsupervised learning'과 유사합니다.
   * Baum-Welch 알고리즘(EM algorithm for HMM, Forward-Backward algorithm)이 있습니다.
   
-   * Optimized π, a, b (예측값)을 구합니다. 이 때 EM 알고리즘(Expectation-Maximization)을 사용합니다.
-   * X, Optimized π, a, b로부터 가장 가능성이 높은(최적의) Z를 구합니다. (Decoding)
+   * Optimized π, a, b (예측값)을 구합니다. 이 때 EM 알고리즘(Expectation-Maximization)을 사용합니다.
+   * X, Optimized π, a, b로부터 가장 가능성이 높은(최적의) Z를 구합니다. (Decoding)
    
  
   
