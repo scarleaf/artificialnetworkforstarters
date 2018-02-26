@@ -437,7 +437,7 @@ N가지 종류의 데이터 x와 추론 대상 매개변수 i가 있는 모집�
 
 몬테카를로 방법은 난수를 이용하여 함수의 값을 확률적으로 계산하는 알고리즘으로 수학이나 물리학에서 자주 사용됩니다. 스타니스와프 울람이 모나코의 유명한 도박의 도시 몬테카를로의 이름을 본 따 명명했습니다.
 
-.. image:: imgs/몬테카를로_사진.jpg
+.. image:: imgs/몬테카를로_사진.png
         :width: 500px
         :align: center
         :height: 500px
@@ -454,21 +454,35 @@ N가지 종류의 데이터 x와 추론 대상 매개변수 i가 있는 모집�
 
 
  * **Z** t로부터 **Z** t+1로 transition 진행은 transition matrix **T** i,j에 의해 일어납니다.
+ 
  * 각 node(Z)는 각각의 probability distribution을 가지고 있습니다. (Stochastic observation의 경우 **Z** t의 확률형태로 표현)
+ 
  * P(**Z** t+1)은 P(**Z** t)와 P(**Z** t+1|**Z** t)로 구할 수 있습니다.
+ 
  * 아주 많은 chain으로 상태전이가 계속될 때 반복 계산하여 P(**Z** t+1)을 계산할 수 있습니다.
+ 
  * Markov chain의 특수한 형태인 Stationary Distribution 메트로폴리스-헤이스팅스 알고리즘을 작동하도록 만드는 핵심조건 입니다.
+ 
  * Stationary Distribution은 π(모든 state마다 정의되는 확률분포 값)가 t에 따라 더이상 변화하지 않는 상태입니다. (πT = π)
  
+ 
 * Traditional Markov Chain Analysis
+
  * Given P(**Z** t+1 | **Z** t) (=Transition Rule)...
+ 
  * Find π(Z) (=Stationary distribution)
 
+
 * Markov Chain Monte Carlo(MCMC)
+
  * Given π(Z)...
+ 
  * Find prescribtion for an efficient transition rule to reach the stationary distribution
+ 
  * How to? 우리가 알고있는 π(Z)를 잘 표현할 수 있는 transition matrix를 만들어서 sampling을 반복적으로 진행합니다.
+ 
  * MaryCalls, Alarm이 Evidence node라고 가정할 때, 나머지 node들에 random 값을 assign해야합니다. 이 때 상태 **Z** t에서 MCMC로 계산된 transition rule을 사용하여 상태 **Z** t+1로 변화시켜보고 각 노드들의 assign 된 값을 확인합니다. 결국 가장 많이 나오는 값(most likely value)을 알지 못하던 latent variable에 assign 할 수 있습니다.
+ 
 
 .. image:: imgs/MCMC_그림.png
         :width: 500px
@@ -478,7 +492,9 @@ N가지 종류의 데이터 x와 추론 대상 매개변수 i가 있는 모집�
 
 * Matropolis-Hastings 알고리즘
 
- * 
+ * π(Z)를 잘 표현할 수 있는 transition matrix를 만드는 핵심 알고리즘입니다.
+ * Current value **Z** t가 있을 때, candidate **Z** * ~ q(**Z** *| **Z** t)를 propose합니다.
+ * 다음 acceptance probability(α)에 따라 **Z** *(accept) 혹은 **Z** t(reject)를 취합니다.
 
 
 04 은닉 마르코프 모델과 베이즈 네트워크
