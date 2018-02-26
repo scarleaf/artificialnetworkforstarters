@@ -446,7 +446,7 @@ N가지 종류의 데이터 x와 추론 대상 매개변수 i가 있는 모집�
         :alt: alternate text
         
 
-* 마르코프 연쇄(Markov Chain) 
+* 마르코프 연쇄 (Markov Chain) 
 
 
  * **Z** t로부터 **Z** t+1로 transition 진행은 transition matrix **T** i,j에 의해 일어납니다.
@@ -475,7 +475,7 @@ N가지 종류의 데이터 x와 추론 대상 매개변수 i가 있는 모집�
  * Find π(Z) (=Stationary distribution)
 
 
-* Markov Chain Monte Carlo(MCMC)
+* Markov Chain Monte Carlo (MCMC)
 
  * Given π(Z)...
  
