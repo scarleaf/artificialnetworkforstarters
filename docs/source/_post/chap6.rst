@@ -457,7 +457,7 @@ N가지 종류의 데이터 x와 추론 대상 매개변수 i가 있는 모집�
  
  * 아주 많은 chain으로 상태전이가 계속될 때 반복 계산하여 P(**Z** t+1)을 계산할 수 있습니다.
  
- * Markov chain의 특수한 형태인 Stationary Distribution 메트로폴리스-헤이스팅스 알고리즘을 작동하도록 만드는 핵심조건 입니다.
+ * Markov chain의 특수한 형태인 Stationary Distribution은 메트로폴리스-헤이스팅스 알고리즘을 작동하도록 만드는 핵심조건 입니다.
  
  * Stationary Distribution은 π(모든 state마다 정의되는 확률분포 값)가 t에 따라 더이상 변화하지 않는 상태입니다. (πT = π)
 
