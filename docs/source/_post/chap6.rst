@@ -451,6 +451,8 @@ N가지 종류의 데이터 x와 추론 대상 매개변수 i가 있는 모집�
 
  * **Z** t로부터 **Z** t+1로 transition 진행은 transition matrix **T** i,j에 의해 일어납니다.
  
+ * 즉, 한 상태 Z의 확률은 단지 그 이전 상태에만 의존한다는 것이 markov chain의 핵심입니다.
+ 
  * 각 node(Z)는 각각의 probability distribution을 가지고 있습니다. (Stochastic observation의 경우 **Z** t의 확률형태로 표현)
  
  * P(**Z** t+1)은 P(**Z** t)와 P(**Z** t+1| **Z** t)로 구할 수 있습니다.
@@ -459,7 +461,7 @@ N가지 종류의 데이터 x와 추론 대상 매개변수 i가 있는 모집�
  
  * Markov chain의 특수한 형태인 Stationary Distribution은 메트로폴리스-헤이스팅스 알고리즘을 작동하도록 만드는 핵심조건 입니다.
  
- * Stationary Distribution은 π(모든 state마다 정의되는 확률분포 값)가 t에 따라 더이상 변화하지 않는 상태입니다. (πT = π)
+ * Stationary Distribution은 π(모든 state마다 정의되는 확률분포 값. Model이 각 상태 Z에 있을 확률분포)가 t에 따라 더이상 변화하지 않는 상태입니다. (πT = π)
 
 .. image:: imgs/마르코프체인_그림.png
         :width: 500px
@@ -479,7 +481,7 @@ N가지 종류의 데이터 x와 추론 대상 매개변수 i가 있는 모집�
 
  * Given π(Z)...
  
- * Find prescribtion for an efficient transition rule to reach the stationary distribution
+ * Find prescription for an efficient transition rule to reach the stationary distribution
  
  * How to? 우리가 알고있는 π(Z)를 잘 표현할 수 있는 transition matrix를 만들어서 sampling을 반복적으로 진행합니다.
  
@@ -496,7 +498,7 @@ N가지 종류의 데이터 x와 추론 대상 매개변수 i가 있는 모집�
 
  * π(Z)를 잘 표현할 수 있는 transition matrix를 만드는 핵심 알고리즘입니다.
  * Current value **Z** t가 있을 때, candidate **Z** * ~ q(**Z** *| **Z** t)를 propose합니다.
- * 다음 acceptance probability(α)에 따라 **Z** *(accept) 혹은 **Z** t(reject)를 취합니다.
+ * 다음 acceptance probability(α)에 따라 **Z** * (accept) 혹은 **Z** t(reject)를 취합니다.
 
 
 04 은닉 마르코프 모델과 베이즈 네트워크
@@ -508,7 +510,7 @@ N가지 종류의 데이터 x와 추론 대상 매개변수 i가 있는 모집�
 
 * 은닉 마르코프 모델 (HMM, Hidden Markov Model, Dynamic Clustering)
 
- * Indepentent한 data(latent variables)들로부터 시간 경과에 따라 앞/뒤 상태에 영향을 주는 모델을 의미합니다. Latent random variable인 z1은 t1에서 x1이 관찰됩니다. 또한 z1은 이후 latent random variable인 z2에 영향을 미칩니다. 여기에서 x1은 P(x1|z1)으로 표현할 수 있습니다.
+ * Indepentent한 data(latent variables)들로부터 시간 경과에 따라 앞/뒤 상태에 영향을 주는 모델을 의미합니다. 각 상태가 markov chain을 따르되 state는 은닉되어 있다고 가정합니다. Latent random variable인 z1은 시간 t1에서 x1이 관찰됩니다. 또한 z1은 이후 latent random variable인 z2에 영향을 미칩니다. 여기에서 x1은 P(x1|z1)라는 emission probability로 표현할 수 있습니다.
  
 .. image:: imgs/HMM_그림.png
         :width: 500px
@@ -520,15 +522,17 @@ N가지 종류의 데이터 x와 추론 대상 매개변수 i가 있는 모집�
 
  * Evaluation question
  
-  * Given π, a, b, X...
+  * Given π, a(transition probability matrix), b(zi에서 ti일 때 xi가 나타날 emission probability), X...
   * Find P(X|M, π, a, b) : Trained model M에서 X 가능성은 어느 정도입니까?
+  * 중복되는 계산 결과(전방확률)는 어딘가에 저장해 두었다가 필요할 때마다 불러서 쓴다는 것입니다. N개의 은닉상태가 있고 관측치 길이가 T라면 고려해야 할 가짓수가 N^T개나 되는데 중복되는 계산을 저장해 둔다면 계산이 훨씬 간단해 집니다.
  
  * Decoding question
  
   * Given π, a, b, X...
   * Find **argmax** z P(Z|X, M, π, a, b) : 가장 가능성이 높은(최적의) Z(latent state)는 무엇입니까?
   * 이미 π, a, b가 주어진 상황에서 Z를 구한다는 점에서 'supervisez learning'과 유사합니다.
-  * 모델의 최적(최대확률을 가진) 상태를 구하는 Viterbi 알고리즘이 있습니다.
+  * 모델의 최적(최대확률을 가진) 상태를 구하는 Viterbi 알고리즘이 있습니다. Evaluation question과 가장 큰 차이점은 역추적(backtracking) 과정이 존재한다는 점입니다.
+  * 나열된 단어에서 품사 태그를 찾는 것 등에 사용할 수 있습니다.
 
  * Learning question
  
