@@ -483,6 +483,8 @@ N가지 종류의 데이터 x와 추론 대상 매개변수 i가 있는 모집�
  
  * Find prescription for an efficient transition rule to reach the stationary distribution
  
+ * 즉, 어떤 목표 확률분포로부터 random sample을 얻는 방법입니다.
+ 
  * How to? 우리가 알고있는 π(Z)를 잘 표현할 수 있는 transition matrix를 만들어서 sampling을 반복적으로 진행합니다.
  
  * MaryCalls, Alarm이 Evidence node라고 가정할 때, 나머지 node들에 random 값을 assign해야합니다. 이 때 상태 **Z** t에서 MCMC로 계산된 transition rule을 사용하여 상태 **Z** t+1로 변화시켜보고 각 노드들의 assign 된 값을 확인합니다. 결국 가장 많이 나오는 값(most likely value)을 알지 못하던 latent variable에 assign 할 수 있습니다.
@@ -498,6 +500,7 @@ N가지 종류의 데이터 x와 추론 대상 매개변수 i가 있는 모집�
 
  * π(Z)를 잘 표현할 수 있는 transition matrix를 만드는 핵심 알고리즘입니다.
  * Current value **Z** t가 있을 때, candidate **Z** * ~ q(**Z** * | **Z** t)를 propose합니다.
+ * Proposal distribution으로부터 나온 random sample y의 확률과 x의 확률을 비교하여 acceptance probability(α)를 계산합니다.
  * 다음 acceptance probability(α)에 따라 **Z** * (accept) 혹은 **Z** t(reject)를 취합니다.
 
 
