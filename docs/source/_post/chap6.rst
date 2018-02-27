@@ -497,7 +497,7 @@ N가지 종류의 데이터 x와 추론 대상 매개변수 i가 있는 모집�
 * Matropolis-Hastings 알고리즘
 
  * π(Z)를 잘 표현할 수 있는 transition matrix를 만드는 핵심 알고리즘입니다.
- * Current value **Z** t가 있을 때, candidate **Z** * ~ q(**Z** *| **Z** t)를 propose합니다.
+ * Current value **Z** t가 있을 때, candidate **Z** * ~ q(**Z** * | **Z** t)를 propose합니다.
  * 다음 acceptance probability(α)에 따라 **Z** * (accept) 혹은 **Z** t(reject)를 취합니다.
 
 
